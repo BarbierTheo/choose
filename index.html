@@ -39,7 +39,7 @@
               aria-current="page">A l'affiche</a>
           </li>
           <li>
-            <a href="#"
+            <a href="#sorties"
               class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Prochaines
               sorties</a>
           </li>
@@ -74,7 +74,7 @@
               d="M1 5h12m0 0L9 1m4 4L9 9" />
           </svg>
         </a>
-        <a href="#"
+        <a href="#sorties"
           class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
           Prochaines sorties
         </a>
@@ -91,7 +91,7 @@
 
 
 
-  <main class="mt-14 container mx-auto">
+  <div class="my-14 container mx-auto">
     <h2 class="m-8 text-center text-4xl font-bold w-10/12 lg:w-6/12" id="affiche">A l'affiche</h2>
     <section class="flex justify-around mx-28 flex-col lg:flex-row gap-4 min-h-[70vh]">
 
@@ -120,22 +120,48 @@
           </p>
         </div>
       </div>
+    </section>
+  </div>
+
+
+
+  <!-- TRANSITION -->
+
+
+  <div class="h-[70vh] bg-white dark:bg-gray-900  flex flex-col lg:flex-row justify-center">
+
+    <div class="text-white flex flex-col justify-center gap-12 w-5/12 max-[1100px]:text-center max-[1100px]:w-11/12 max-[1100px]:m-auto">
+      <div class="">
+        <h3 class="font-semibold text-4xl max-[1100px]:text-2xl">Découvrez, pas consommez</h3>
+        <p class="text-xl font-light max-[1100px]:text-lg">Redécouvrez le plaisir de choisir un film par vous-même, comme un vrai explorateur du cinéma</p>
+      </div>
+      <div class="">
+        <h3 class="font-semibold text-4xl max-[1100px]:text-2xl">Reprenez le pouvoir</h3>
+        <p class="text-xl font-light max-[1100px]:text-lg">Explorez une sélection de films sans qu’aucun algorithme ne dicte vos choix. Ici, c’est votre intuition et vos envies qui décident, sans influence extérieure</p>
+      </div>
+      <div class="">
+        <h3 class="font-semibold text-4xl max-[1100px]:text-2xl">Zéro algorithme, 100% vous</h3>
+        <p class="text-xl font-light max-[1100px]:text-lg">Votre temps et vos goûts méritent mieux que des recommandations automatiques. Ici, vous avez toutes les cartes en main</p>
+      </div>
+    </div>
+    
+    <div class="m flex flex-col justify-center max-[1100px]:hidden">
+      <img src="./assets/img/watching-a-3d-movie-1950s-v0-ax7ggsjzw8yb1.webp" alt="" class="h-[90%] w-fit rounded-[8rem] self-end">
+    </div>
+
+  </div>
+
+
+  <div class="my-14 container mx-auto">
+    <h2 class="m-8 text-center text-4xl font-bold w-10/12 lg:w-6/12" id="sorties">Prochaines sorties</h2>
+    <section class="flex justify-around mx-28 flex-col lg:flex-row gap-4 min-h-[70vh]">
 
     </section>
-
-
-    <h2 class="my-20 text-center text-4xl font-bold mb-14" id="sorties">
-      Prochaines sorties
-    </h2>
-  </main>
+  </div>
 
 
 
 
-  <!-- EXAMPLE -->
-
-
-  <!-- EXAMPLE -->
 
   <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
   <script src="./assets/js/script.js"></script>
