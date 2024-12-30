@@ -32,3 +32,32 @@ function type() {
 type();
 
 // CHATGPT
+
+
+fetch("./assets/js/nextMovies.json")
+  .then((reponse) => reponse.json())
+  .then((movies) => {
+    for (item of movies["results"]) {
+
+      document.querySelector("#card-affiche-section").innerHTML += `<div
+      class="bg-slate-500 w-[80vw] lg:w-[23rem] h-[38rem] flex rounded-lg self-center bg-gradient-to-t from-slate-950 from-50% via-slate-700 via-70% cursor-pointer flex-wrap">
+      <div class="m-8 gap-4 flex flex-col self-end text-white">
+        <h3 class="text-3xl font-semibold">${item.title}</h3>
+        <div class="flex justify-between">
+          <div class="flex flex-col self-end">
+            <small>Date de sortie</small>
+            <p>${item.release_date}</p>
+          </div>
+          <div class="flex flex-col self-end">
+            <small>Popularité</small>
+            <p>${item.vote_average}</p>
+          </div>
+          <div id='adult' class="hidden">+18</p>
+          </div>
+        </div>
+        <p>${item.overview}
+        </p>
+      </div>
+    </div>` ;
+    }
+  });
