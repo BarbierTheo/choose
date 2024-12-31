@@ -39,25 +39,37 @@ fetch("./assets/js/nextMovies.json")
   .then((movies) => {
     for (item of movies["results"]) {
 
-      document.querySelector("#card-affiche-section").innerHTML += `<div
-      class="bg-slate-500 w-[80vw] lg:w-[23rem] h-[38rem] flex rounded-lg self-center bg-gradient-to-t from-slate-950 from-50% via-slate-700 via-70% cursor-pointer flex-wrap">
-      <div class="m-8 gap-4 flex flex-col self-end text-white">
-        <h3 class="text-3xl font-semibold">${item.title}</h3>
-        <div class="flex justify-between">
-          <div class="flex flex-col self-end">
-            <small>Date de sortie</small>
-            <p>${item.release_date}</p>
-          </div>
-          <div class="flex flex-col self-end">
-            <small>Popularité</small>
-            <p>${item.vote_average}</p>
-          </div>
-          <div id='adult' class="hidden">+18</p>
-          </div>
-        </div>
-        <p>${item.overview}
-        </p>
+    //   document.querySelector("#card-affiche-section").innerHTML += `
+    //   <div
+    //   class="bg-slate-500 w-[80vw] lg:w-[23rem] h-[38rem] flex rounded-lg self-center bg-gradient-to-t from-slate-950 from-50% via-slate-700 via-70% cursor-pointer flex-wrap">
+    //   <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class ="cardimg" alt="">
+    //   <div class="m-8 gap-4 flex flex-col self-end text-white">
+    //     <h3 class="text-3xl font-semibold">${item.title}</h3>
+    //     <div class="flex justify-between">
+    //       <div class="flex flex-col self-end">
+    //         <small>Date de sortie</small>
+    //         <p>${item.release_date}</p>
+    //       </div>
+    //       <div class="flex flex-col self-end">
+    //         <small>Popularité</small>
+    //         <p>${item.vote_average}</p>
+    //       </div>
+    //       <div id='adult' class="hidden">+18</p>
+    //       </div>
+    //     </div>
+    //     <p>${item.overview}
+    //     </p>
+    //   </div>
+    // </div>` ;
+
+
+          document.querySelector("#card-affiche-section").innerHTML += `
+          <div class="flex flex-col justify-between gap-2 mb-4">
+      <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="cardimg flex rounded-lg self-center cursor-pointer">
+      <button type="button" class="cardimg self-center py-2.5 px-5 me-2 mb-2 text-sm font-semibold text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-slate-700">+ d'infos</button>
       </div>
-    </div>` ;
+    ` ;
+
+
     }
   });

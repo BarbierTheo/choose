@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
   <!-- NAV -->
 
   <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
@@ -91,9 +90,16 @@
 
 
 
+
   <div class="my-14 container mx-auto">
-    <h2 class="m-8 text-center text-4xl font-bold w-10/12 lg:w-6/12" id="affiche">A l'affiche</h2>
-    <section class="flex justify-around mx-28 flex-col lg:flex-row gap-4 min-h-[70vh] flex-wrap" id="card-affiche-section">
+    <div class="flex flex-row my-2 mx-2">
+      <h2 class="m-8 text-center text-4xl font-bold" id="affiche">A l'affiche</h2>
+    </div>
+
+    <section class="flex justify-around flex-col lg:flex-row gap-32 lg:gap-0 min-h-[70vh] flex-wrap m-auto p-0"
+      id="card-affiche-section">
+
+
 
       <!-- CARD -->
 
@@ -132,23 +138,28 @@
 
   <div class="h-[70vh] bg-white dark:bg-gray-900  flex flex-col lg:flex-row justify-center">
 
-    <div class="text-white flex flex-col justify-center gap-12 w-5/12 max-[1100px]:text-center max-[1100px]:w-11/12 max-[1100px]:m-auto">
+    <div
+      class="text-white flex flex-col justify-center gap-12 w-5/12 max-[1100px]:text-center max-[1100px]:w-11/12 max-[1100px]:m-auto">
       <div class="">
         <h3 class="font-semibold text-4xl max-[1100px]:text-2xl">Découvrez, pas consommez</h3>
-        <p class="text-xl font-light max-[1100px]:text-lg">Redécouvrez le plaisir de choisir un film par vous-même, comme un vrai explorateur du cinéma</p>
+        <p class="text-xl font-light max-[1100px]:text-lg">Redécouvrez le plaisir de choisir un film par vous-même,
+          comme un vrai explorateur du cinéma</p>
       </div>
       <div class="">
         <h3 class="font-semibold text-4xl max-[1100px]:text-2xl">Reprenez le pouvoir</h3>
-        <p class="text-xl font-light max-[1100px]:text-lg">Explorez une sélection de films sans qu’aucun algorithme ne dicte vos choix. Ici, c’est votre intuition et vos envies qui décident, sans influence extérieure</p>
+        <p class="text-xl font-light max-[1100px]:text-lg">Explorez une sélection de films sans qu’aucun algorithme ne
+          dicte vos choix. Ici, c’est votre intuition et vos envies qui décident, sans influence extérieure</p>
       </div>
       <div class="">
         <h3 class="font-semibold text-4xl max-[1100px]:text-2xl">Zéro algorithme, 100% vous</h3>
-        <p class="text-xl font-light max-[1100px]:text-lg">Votre temps et vos goûts méritent mieux que des recommandations automatiques. Ici, vous avez toutes les cartes en main</p>
+        <p class="text-xl font-light max-[1100px]:text-lg">Votre temps et vos goûts méritent mieux que des
+          recommandations automatiques. Ici, vous avez toutes les cartes en main</p>
       </div>
     </div>
-    
+
     <div class="m flex flex-col justify-center max-[1100px]:hidden">
-      <img src="./assets/img/watching-a-3d-movie-1950s-v0-ax7ggsjzw8yb1.webp" alt="" class="h-[90%] w-fit rounded-[8rem] self-end">
+      <img src="./assets/img/watching-a-3d-movie-1950s-v0-ax7ggsjzw8yb1.webp" alt=""
+        class="h-[90%] w-fit rounded-[8rem] self-end">
     </div>
 
   </div>
@@ -162,6 +173,49 @@
   </div>
 
 
+  <footer class="bg-gray-800 border-gray-700">
+    <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+      <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
+        <a class="inline-block rounded-full bg-teal-600 p-2 text-white shadow transition hover:bg-teal-500 sm:p-3 lg:p-4"
+          href="#">
+          <span class="sr-only">Retour en haut du site</span>
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="lg:flex lg:items-end lg:justify-between">
+        <div>
+          <div class="flex justify-center lg:justify-start">
+            <p class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</p>
+          </div>
+
+          <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-slate-500 lg:text-left">
+            Explorez une sélection de films sans qu’aucun algorithme ne
+            dicte vos choix. Ici, c’est votre intuition et vos envies qui décident, sans influence extérieure
+          </p>
+        </div>
+
+        <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+          <li>
+            <a class="text-slate-400 transition hover:text-gray-700/75" href="#">A propos</a>
+          </li>
+
+          <li>
+            <a class="text-slate-400 transition hover:text-gray-700/75" href="#">Mentions légales</a>
+          </li>
+        </ul>
+      </div>
+
+      <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
+        Copyright &copy; 2025. Tous droits réservés.
+      </p>
+    </div>
+  </footer>
 
 
 
