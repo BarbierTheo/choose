@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./normalize.css">
   <link rel="stylesheet" href="./assets/css/tailwind.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -51,7 +52,7 @@
   <!-- HERO SECTION -->
 
   <section class="bg-white dark:bg-gray-900 h-[95vh] flex flex-col">
-    <div class="self-center bg-slate-50 mt-10 rounded-lg">
+    <div class="self-center bg-slate-50 mt-10 rounded-lg  max-[1080px]:w-9/12">
       <img src="./assets/img/couple.svg" class="couple" alt="">
     </div>
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 self-end mb-48">
@@ -136,7 +137,7 @@
   <!-- TRANSITION -->
 
 
-  <div class="h-[70vh] bg-white dark:bg-gray-900  flex flex-col lg:flex-row justify-center">
+  <div class="h-[70vh] bg-gray-900  flex flex-col lg:flex-row justify-center mt-32">
 
     <div
       class="text-white flex flex-col justify-center gap-12 w-5/12 max-[1100px]:text-center max-[1100px]:w-11/12 max-[1100px]:m-auto">
@@ -166,17 +167,40 @@
 
 
   <div class="my-14 container mx-auto">
-    <h2 class="m-8 text-center text-4xl font-bold w-10/12 lg:w-6/12" id="sorties">Prochaines sorties</h2>
-    <section class="flex justify-around mx-28 flex-col lg:flex-row gap-4 min-h-[70vh]">
+    <div class="flex flex-row my-2 mx-2">
+      <h2 class="m-8 text-center text-4xl font-bold" id="sorties">Prochaines sorties</h2>
+    </div>
+
+    <section class="flex justify-around flex-row gap-2 lg:gap-8 min-h-[70vh] flex-wrap m-auto p-0 w-11/12"
+      id="card-affiche-section2">
+<div class="hidden object-cover"></div>
+      <!-- <div class="flex flex-col gap-1">
+        <img class="size-64 bg-cover rounded relative" src="" alt="">
+          <div class="bg-gradient-to-r from-slate-900 rounded-t flex justify-between absolute">
+            <div class="flex flex-col justify-between p-2">
+              <h3 class="text-4xl text-white font-bold">Sonic</h3>
+              <p class="text-slate-300">22/10/25</p>
+            </div>
+            <a href="" class="p-5">
+              <i class='bx bxs-info-circle text-white text-4xl'></i>
+            </a>
+          </div>
+        </img>
+      </div> -->
+
 
     </section>
   </div>
 
 
-  <footer class="bg-gray-800 border-gray-700">
+
+
+  <!-- footer -->
+
+  <footer class="bg-gray-900">
     <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
       <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
-        <a class="inline-block rounded-full bg-teal-600 p-2 text-white shadow transition hover:bg-teal-500 sm:p-3 lg:p-4"
+        <a class="inline-block rounded-full bg-orange-500 p-2 text-white shadow transition hover:bg-orange-600 sm:p-3 lg:p-4"
           href="#">
           <span class="sr-only">Retour en haut du site</span>
 
