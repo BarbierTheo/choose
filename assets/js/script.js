@@ -70,7 +70,7 @@ fetch("./assets/js/movies.json")
       i++;
       document.querySelector("#card-affiche-section").innerHTML += `
           <label for="my_modal_${i}" class="flex flex-col justify-between gap-2 mb-4">
-      <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="flex rounded-lg self-center cursor-pointer md:w-[20rem] lg:w-[17rem]">
+      <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="hover:shadow-sm flex rounded-lg self-center cursor-pointer md:w-[20rem] lg:w-[17rem] duration-300 ease-in-out ">
       </label>
 
       <input type="checkbox" id="my_modal_${i}" class="modal-toggle" />
