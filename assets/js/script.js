@@ -70,21 +70,21 @@ fetch("./assets/js/movies.json")
       i++;
       document.querySelector("#card-affiche-section").innerHTML += `
           <label for="my_modal_${i}" class="flex flex-col justify-between gap-2 mb-4">
-      <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="cardimg flex rounded-lg self-center cursor-pointer">
+      <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="flex rounded-lg self-center cursor-pointer md:w-[20rem] lg:w-[17rem]">
       </label>
 
       <input type="checkbox" id="my_modal_${i}" class="modal-toggle" />
 <div class="modal" role="dialog">
-  <div class="modal-box w-11/12 max-w-3xl bg-white flex flex-col">
+  <div class="modal-box w-11/12 max-w-3xl bg-slate-700 flex flex-col shadow-2xl">
     <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
     <div class="flex justify-between">
-      <h3 class="text-3xl font-bold text-slate-950">${item.title}</h3>
+      <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
       <div class="flex flex-col text-right">
-        <p class="text-slate-700 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
-        <p class="text-slate-600 font-light">${item.release_date}</p>
+        <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
+        <p class="text-gray-200 font-light">${item.release_date}</p>
       </div>
     </div>
-    <p class="text-slate-900">${item.overview}</p>
+    <p class="text-slate-100">${item.overview}</p>
   </div>
   <label class="modal-backdrop" for="my_modal_${i}">Close</label>
 </div>
@@ -103,9 +103,9 @@ fetch("./assets/js/nextMovies.json")
            <img class="size-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
            </img>
          <div class="bg-gradient-to-r from-slate-900  absolute rounded-t flex justify-between w-full">
-            <div class="flex flex-col justify-between p-2">
-              <h3 class="text-xl text-white font-bold">${item.title}</h3>
-              <p class="text-slate-300">${item.release_date}</p>
+            <div class="flex flex-col justify-between p-2 leading-2">
+              <h3 class="text-xl text-white font-bold m-0">${item.title}</h3>
+              <p class="text-slate-300 m-0">${item.release_date}</p>
             </div>
             <label for="my_modal_${a}" class="p-5 text-right">
               <i class='bx bxs-info-circle text-white text-4xl'></i>
