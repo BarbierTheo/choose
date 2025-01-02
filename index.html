@@ -22,7 +22,7 @@
         <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</span>
       </a>
 
-      <!-- <button data-collapse-toggle="navbar-solid-bg" type="button"
+      <button data-collapse-toggle="navbar-solid-bg" type="button"
         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
         aria-controls="navbar-solid-bg" aria-expanded="false">
         <span class="sr-only">Ouvrir le menu principal</span>
@@ -35,17 +35,21 @@
         <ul
           class="flex flex-col font-medium mt-4 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-gray-800  border-gray-700">
           <li>
-            <a href="#affiche"
-              class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent"
+            <a href="#affiche" class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-blue-700"
               aria-current="page">A l'affiche</a>
           </li>
           <li>
             <a href="#sorties"
-              class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent">Prochaines
+              class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-blue-700">Prochaines
               sorties</a>
           </li>
+          <li>
+            <a href="#search"
+              class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-blue-700">Rechercher un film
+            </a>
+          </li>
         </ul>
-      </div> -->
+      </div>
 
 
     </div>
@@ -79,6 +83,10 @@
         <a href="#sorties"
           class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
           Prochaines sorties
+        </a>
+        <a href="#search"
+          class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+          <i class='bx bx-search-alt text-lg align-middle'></i> Rechercher un film
         </a>
       </div>
     </div>
@@ -212,6 +220,36 @@
     </section>
   </div>
 
+  <div class="mt-14 container mx-auto bg-gray-800 border-gray-700 lg:rounded-2xl shadow-lg lg:mb-14">
+    <div class="flex flex-row mt-2 mx-2">
+      <h2 class="mx-8 mt-8 text-center text-4xl font-bold text-white" id="search">Rechercher un film</h2>
+    </div>
+    <div class="divider my-2"></div>
+
+    <div class="flex flex-col lg:flex-row justify-between mx-8 gap-2">
+
+      <label class="input input-bordered flex items-center gap-2 lg:w-screen">
+        <input type="text" class="grow border-none" placeholder="ex: Le Parrain 2" />
+      </label>
+
+      <select class="select lg:w-2/12 max-w-xs">
+        <option disabled selected class="text-slate-300">Choisissez un style</option>
+        <option class="text-slate-100">Science-fiction</option>
+        <option class="text-slate-100">Drame</option>
+        <option class="text-slate-100">Romance</option>
+        <option class="text-slate-100">Action</option>
+        <option class="text-slate-100">Horreur</option>
+      </select>
+
+      <a href="" class="btn"><i class='bx bx-search'></i></a>
+
+ 
+  </div>
+  <section class="flex justify-around flex-col lg:flex-row gap-12 lg:gap-0 min-h-[70vh] flex-wrap m-auto p-0"
+  id="card-affiche-section">
+</section>
+
+    </div>
 
 
 
@@ -263,6 +301,9 @@
 
   <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
   <script src="./assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"
+    integrity="sha512-hUhvpC5f8cgc04OZb55j0KNGh4eh7dLxd/dPSJ5VyzqDWxsayYbojWyl5Tkcgrmb/RVKCRJI1jNlRbVP4WWC4w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

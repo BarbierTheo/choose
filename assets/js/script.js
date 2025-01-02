@@ -131,3 +131,4 @@ fetch("./assets/js/nextMovies.json")
        `;
     }
   });
+
