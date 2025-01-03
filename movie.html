@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose. - Titre du film</title>
+    <!-- npx tailwindcss -i ./assets/css/dist.css -o ./assets/css/tailwind.css --watch -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="bg-gradient-to-br from-gray-500 to-gray-800">
+
+    <nav class="bg-slate-900 shadow-sm fixed w-screen z-10">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</span>
+            </a>
+
+            <button data-collapse-toggle="navbar-solid-bg" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+                aria-controls="navbar-solid-bg" aria-expanded="false">
+                <span class="sr-only">Ouvrir le menu principal</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+                <ul
+                    class="flex flex-col font-medium mt-4 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-gray-800  border-gray-700">
+                    <li>
+                        <a href="#affiche"
+                            class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-blue-400"
+                            aria-current="page">A l'affiche</a>
+                    </li>
+                    <li>
+                        <a href="#sorties"
+                            class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-blue-400">Prochaines
+                            sorties</a>
+                    </li>
+                    <li>
+                        <a href="#search"
+                            class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-blue-400">Rechercher
+                            un film
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-28">
+        <div class="flex flex-col lg:flex-row gap-8  justify-center lg:justify-between lg:mx-24 m">
+            <div class="skeleton min-h-[45rem] w-[50rem] self-center max-w-[70vw]"></div>
+
+            <div class="flex flex-col gap-2 container self-center px-4 lg:mx-0 text-gray-200">
+
+                <div class="flex">
+                    <h1 class="text-4xl font-bold">Matrix</h1>
+                    <p class="self-center text-4xl font-thin ml-4">(1999)</p>
+                </div>
+                <div class="flex gap-4">
+                    <p class="">28 août 1999</p>
+                    <p class="">Action, aventure</p>
+                    <p class="">2h19</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row py-4 gap-3">
+                    <div class="flex bg-slate-900  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
+                        <i class='bx bxs-hot self-center text-3xl'></i>
+                        <div class="flex gap-1 self-center">
+                            <p class="font-semibold">Popularité :</p>
+                            <p>82%</p>
+                        </div>
+                    </div>
+
+                    <div class="flex bg-slate-900  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
+                        <i class='bx bxs-bank self-center text-3xl'></i>
+                        <div class="flex gap-1 self-center">
+                            <p class="font-semibold">Budget :</p>
+                            <p>600.000 $</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="italic text-lg font-semibold">Croire à l'incroyable</p>
+                <p class="text-justify">
+                    Programmeur anonyme dans un service administratif le jour, Thomas Anderson devient Neo la nuit
+                    venue. Sous ce pseudonyme, il est l’un des pirates les plus recherchés du cyber‐espace. À cheval
+                    entre deux mondes, Neo est assailli par d’étranges songes et des messages cryptés provenant d’un
+                    certain Morpheus. Celui‐ci l’exhorte à aller au‐delà des apparences et à trouver la réponse à la
+                    question qui hante constamment ses pensées : qu’est‐ce que la Matrice ? Nul ne le sait, et aucun
+                    homme n’est encore parvenu à en percer les défenses. Mais Morpheus est persuadé que Neo est l’Élu,
+                    le libérateur mythique de l’humanité annoncé selon la prophétie. Ensemble, ils se lancent dans une
+                    lutte sans retour contre la Matrice et ses terribles agents…</p>
+
+                <div class="flex py-4 gap-4 flex-col lg:flex-row">
+
+                    <div
+                        class="flex bg-gray-200  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
+                        <div class="avatar self-s">
+                            <div class="w-16 h-16 rounded-lg">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <p class="self-center ml-2 font-light">Réalisatrice <span class="flex font-bold">Willy
+                                Wachosky</span></p>
+                    </div>
+                    <div
+                        class="flex bg-gray-200  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
+                        <div class="avatar self-s">
+                            <div class="w-16 h-16 rounded-lg">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <p class="self-center ml-2 font-light">Réalisatrice <span class="flex font-bold">Lana
+                                Wachosky</span></p>
+                    </div>
+                </div>
+
+                <p class="text-3xl font-semibold">Casting</p>
+
+                <div class="flex p-3 gap-4 flex-col lg:flex-row">
+
+                    <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
+                        <div class="avatar">
+                            <div class="w-48 rounded-xl">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <p class="text-lg font-bold mt-1">Keanu Reeves</p>
+                        <p class="italic leading-1">Neo</p> 
+                    </div>
+
+                    <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
+                        <div class="avatar">
+                            <div class="w-48 rounded-xl">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <p class="text-lg font-bold mt-1">Keanu Reeves</p>
+                        <p class="italic leading-1">Neo</p> 
+                    </div>
+
+                    <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
+                        <div class="avatar">
+                            <div class="w-48 rounded-xl">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <p class="text-lg font-bold mt-1">Keanu Reeves</p>
+                        <p class="italic leading-1">Neo</p> 
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- footer -->
+
+    <footer class="bg-gray-900">
+        <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+            <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
+                <a class="inline-block rounded-full bg-orange-500 p-2 text-white shadow transition hover:bg-orange-600 sm:p-3 lg:p-4"
+                    href="#">
+                    <span class="sr-only">Retour en haut du site</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="lg:flex lg:items-end lg:justify-between">
+                <div>
+                    <div class="flex justify-center lg:justify-start">
+                        <p class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</p>
+                    </div>
+
+                    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-slate-500 lg:text-left">
+                        Explorez une sélection de films sans qu’aucun algorithme ne
+                        dicte vos choix. Ici, c’est votre intuition et vos envies qui décident, sans influence
+                        extérieure
+                    </p>
+                </div>
+
+                <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+                    <li>
+                        <a class="text-slate-400 transition hover:text-gray-700/75" href="#">A propos</a>
+                    </li>
+
+                    <li>
+                        <a class="text-slate-400 transition hover:text-gray-700/75" href="#">Mentions légales</a>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
+                Copyright &copy; 2025. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"
+        integrity="sha512-hUhvpC5f8cgc04OZb55j0KNGh4eh7dLxd/dPSJ5VyzqDWxsayYbojWyl5Tkcgrmb/RVKCRJI1jNlRbVP4WWC4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

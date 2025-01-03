@@ -3,7 +3,8 @@ module.exports = {
   content: [
     "./index.html",
     "./node_modules/flowbite/**/*.js",
-    "./assets/js/script.js"
+    "./assets/js/script.js",
+    "./movie.html"
   ],
   theme: {
     extend: {},
