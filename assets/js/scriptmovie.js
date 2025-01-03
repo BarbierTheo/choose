@@ -1,6 +1,7 @@
 fetch("./assets/js/details.json")
     .then((reponse) => reponse.json())
     .then((details) => {
+        document.getElementById('titlepage').innerText = `Choose - ${details.title}`
 
         document.getElementById('imgmovie').innerHTML += `<img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class=" w-[60vh] lg:skew-y-1 max-w-[90vw] self-center min-[1100px]:self-start">`
 
@@ -33,7 +34,7 @@ fetch("./assets/js/details.json")
                         genrejob = "Réalisateur"
                     }
                     i++
-                    if(i<=3){
+                    if(i<=4){
                   document.getElementById('crew').innerHTML += `<div
                         class="flex bg-gray-200  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
                         <div class="avatar">
