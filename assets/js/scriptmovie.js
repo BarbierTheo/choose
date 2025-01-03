@@ -23,7 +23,7 @@ fetch("./assets/js/details.json")
     fetch("./assets/js/credits.json")
     .then((reponse) => reponse.json())
     .then((credits) => {
-        
+        let i = 0
         for (item of credits.crew) {
             if (item.job === "Director") {
                     let genrejob = ""
@@ -32,7 +32,8 @@ fetch("./assets/js/details.json")
                     } else {
                         genrejob = "Réalisateur"
                     }
-
+                    i++
+                    if(i<=3){
                   document.getElementById('crew').innerHTML += `<div
                         class="flex bg-gray-200  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
                         <div class="avatar">
@@ -42,6 +43,7 @@ fetch("./assets/js/details.json")
                         </div>
                         <p class="self-center ml-2 font-light">${genrejob} <span class="flex font-bold">${item.name}</span></p>
                     </div>`
+                }
             }
         }
     })
