@@ -124,54 +124,42 @@
 
                     <div class="flex p-3 gap-4 lg:flex-row justify-around flex-wrap">
 
-                        <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
-                            <div class="avatar">
-                                <div class="w-48 rounded-xl">
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        <button class="self-center hidden" id="buttoncard1"><i class='bx bx-left-arrow-alt text-5xl'
+                                id="tocard1"></i></button>
+
+                        <div class="flex p-3 gap-4 lg:flex-row justify-around flex-wrap" id="casting">
+
+                            <!-- <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
+                                <div class="avatar">
+                                    <div class="w-48 rounded-xl">
+                                        <img
+                                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="text-lg font-bold mt-1">Keanu Reeves</p>
-                            <p class="italic leading-1">Neo</p>
+                                <p class="text-lg font-bold mt-1">Keanu Reeves</p>
+                                <p class="italic leading-1">Neo</p>
+                            </div> -->
+
+
+                        </div>
+                        <div class="hidden p-3 gap-4 lg:flex-row justify-around flex-wrap" id="casting2">
+
+                            <!-- <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
+                                <div class="avatar">
+                                    <div class="w-48 rounded-xl">
+                                        <img
+                                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    </div>
+                                </div>
+                                <p class="text-lg font-bold mt-1">Keanu Reeves</p>
+                                <p class="italic leading-1">Neo</p>
+                            </div> -->
+
+
                         </div>
 
-                        <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
-                            <div class="avatar">
-                                <div class="w-48 rounded-xl">
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                                </div>
-                            </div>
-                            <p class="text-lg font-bold mt-1">Keanu Reeves</p>
-                            <p class="italic leading-1">Neo</p>
-                        </div>
-
-    
-
-                        <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
-                            <div class="avatar">
-                                <div class="w-48 rounded-xl">
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                                </div>
-                            </div>
-                            <p class="text-lg font-bold mt-1">Keanu Reeves</p>
-                            <p class="italic leading-1">Neo</p>
-                        </div>
-
-                        <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
-                            <div class="avatar">
-                                <div class="w-48 rounded-xl">
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                                </div>
-                            </div>
-                            <p class="text-lg font-bold mt-1">Keanu Reeves</p>
-                            <p class="italic leading-1">Neo</p>
-                        </div>
-
-
-
+                        <button class="self-center text-right" id="buttoncard2"><i
+                                class='bx bx-right-arrow-alt text-5xl' id="tocard2"></i></button>
                     </div>
 
                 </div>
@@ -235,7 +223,7 @@
             </p>
         </div>
     </footer>
-    
+
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
     <script src="./assets/js/scriptmovie.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"
