@@ -3359,6 +3359,49 @@ details.collapse summary::-webkit-details-marker {
       var(--handleoffsetcalculator) 0 0 3px var(--fallback-bc,oklch(var(--bc)/1)) inset;
 }
 
+.glass,
+  .glass.btn-active {
+  border: none;
+  -webkit-backdrop-filter: blur(var(--glass-blur, 40px));
+          backdrop-filter: blur(var(--glass-blur, 40px));
+  background-color: transparent;
+  background-image: linear-gradient(
+        135deg,
+        rgb(255 255 255 / var(--glass-opacity, 30%)) 0%,
+        rgb(0 0 0 / 0%) 100%
+      ),
+      linear-gradient(
+        var(--glass-reflex-degree, 100deg),
+        rgb(255 255 255 / var(--glass-reflex-opacity, 10%)) 25%,
+        rgb(0 0 0 / 0%) 25%
+      );
+  box-shadow: 0 0 0 1px rgb(255 255 255 / var(--glass-border-opacity, 10%)) inset,
+      0 0 0 2px rgb(0 0 0 / 5%);
+  text-shadow: 0 1px rgb(0 0 0 / var(--glass-text-shadow-opacity, 5%));
+}
+
+@media (hover: hover) {
+  .glass.btn-active {
+    border: none;
+    -webkit-backdrop-filter: blur(var(--glass-blur, 40px));
+            backdrop-filter: blur(var(--glass-blur, 40px));
+    background-color: transparent;
+    background-image: linear-gradient(
+          135deg,
+          rgb(255 255 255 / var(--glass-opacity, 30%)) 0%,
+          rgb(0 0 0 / 0%) 100%
+        ),
+        linear-gradient(
+          var(--glass-reflex-degree, 100deg),
+          rgb(255 255 255 / var(--glass-reflex-opacity, 10%)) 25%,
+          rgb(0 0 0 / 0%) 25%
+        );
+    box-shadow: 0 0 0 1px rgb(255 255 255 / var(--glass-border-opacity, 10%)) inset,
+        0 0 0 2px rgb(0 0 0 / 5%);
+    text-shadow: 0 1px rgb(0 0 0 / var(--glass-text-shadow-opacity, 5%));
+  }
+}
+
 .btm-nav-xs > *:where(.active) {
   border-top-width: 1px;
 }
@@ -3894,6 +3937,10 @@ details.collapse summary::-webkit-details-marker {
   margin: 1rem;
 }
 
+.m-3 {
+  margin: 0.75rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -4164,6 +4211,22 @@ details.collapse summary::-webkit-details-marker {
   height: 45rem;
 }
 
+.h-\[95vh\] {
+  height: 95vh;
+}
+
+.h-\[60vh\] {
+  height: 60vh;
+}
+
+.h-\[85vh\] {
+  height: 85vh;
+}
+
+.h-\[80vh\] {
+  height: 80vh;
+}
+
 .max-h-\[45rem\] {
   max-height: 45rem;
 }
@@ -4297,6 +4360,22 @@ details.collapse summary::-webkit-details-marker {
   width: 50%;
 }
 
+.w-\[50vh\] {
+  width: 50vh;
+}
+
+.w-\[100vh\] {
+  width: 100vh;
+}
+
+.w-\[70vh\] {
+  width: 70vh;
+}
+
+.w-\[80vh\] {
+  width: 80vh;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -4323,6 +4402,14 @@ details.collapse summary::-webkit-details-marker {
 
 .max-w-\[70vw\] {
   max-width: 70vw;
+}
+
+.max-w-\[7vw\] {
+  max-width: 7vw;
+}
+
+.max-w-\[90vw\] {
+  max-width: 90vw;
 }
 
 .flex-1 {
@@ -4364,6 +4451,26 @@ details.collapse summary::-webkit-details-marker {
 
 .rotate-180 {
   --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-y-12 {
+  --tw-skew-y: 12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-y-6 {
+  --tw-skew-y: 6deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-y-2 {
+  --tw-skew-y: 2deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-y-1 {
+  --tw-skew-y: 1deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -4505,8 +4612,36 @@ details.collapse summary::-webkit-details-marker {
   align-self: center;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overscroll-auto {
+  overscroll-behavior: auto;
+}
+
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
+
+.overscroll-x-auto {
+  overscroll-behavior-x: auto;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap {
@@ -5593,6 +5728,10 @@ details.collapse summary::-webkit-details-marker {
     width: auto;
   }
 
+  .md\:max-w-\[70vw\] {
+    max-width: 70vw;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -5685,6 +5824,27 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:w-screen {
     width: 100vw;
+  }
+
+  .lg\:max-w-\[70vw\] {
+    max-width: 70vw;
+  }
+
+  .lg\:max-w-\[50vw\] {
+    max-width: 50vw;
+  }
+
+  .lg\:max-w-\[40vw\] {
+    max-width: 40vw;
+  }
+
+  .lg\:max-w-\[60vw\] {
+    max-width: 60vw;
+  }
+
+  .lg\:skew-y-1 {
+    --tw-skew-y: 1deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .lg\:flex-row {
