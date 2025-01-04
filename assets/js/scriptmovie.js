@@ -3,22 +3,22 @@ moment.locale('fr')
 
 function nFormatter(num, digits) {
     const lookup = [
-      { value: 1, symbol: "" },
-      { value: 1e3, symbol: "k" },
-      { value: 1e6, symbol: "M" },
-      { value: 1e9, symbol: "G" },
-      { value: 1e12, symbol: "T" },
-      { value: 1e15, symbol: "P" },
-      { value: 1e18, symbol: "E" }
+        { value: 1, symbol: "" },
+        { value: 1e3, symbol: "k" },
+        { value: 1e6, symbol: "M" },
+        { value: 1e9, symbol: "G" },
+        { value: 1e12, symbol: "T" },
+        { value: 1e15, symbol: "P" },
+        { value: 1e18, symbol: "E" }
     ];
     const regexp = /\.0+$|(?<=\.[0-9]*[1-9])0+$/;
     const item = lookup.findLast(item => num >= item.value);
     return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(item.symbol) : "0";
-  }
-  
-  /*
-   * Tests
-   */
+}
+
+/*
+ * Tests
+ */
 //   const tests = [
 //     { num: 0, digits: 1 },
 //     { num: 12, digits: 1 },
@@ -63,16 +63,16 @@ fetch("./assets/js/details.json")
         document.getElementById('tagline').innerText = details.tagline
         document.getElementById('synopsis').innerText = details.overview
 
-        if (details.vote_average<=2.5){
+        if (details.vote_average <= 2.5) {
             iconradial = "<i class='bx bx-run text-red-200 text-3xl'></i>"
             colorradial = "text-red-500"
-        } else if (details.vote_average<=5) {
+        } else if (details.vote_average <= 5) {
             iconradial = "<i class='bx bx-body text-yellow-200 text-3xl'></i>"
             colorradial = "text-yellow-400"
-        } else if (details.vote_average<=7.5) {
+        } else if (details.vote_average <= 7.5) {
             iconradial = "<i class='bx bxs-tv text-gray-100 text-3xl'></i>"
             colorradial = "text-green-300"
-        } else  if (details.vote_average<9){ 
+        } else if (details.vote_average < 9) {
             iconradial = "<i class='bx bx-check text-green-200 text-3xl'></i>"
             colorradial = "text-green-500"
         } else {
@@ -80,7 +80,7 @@ fetch("./assets/js/details.json")
             colorradial = "text-gray-100"
         }
 
-        let valueradial = details.vote_average*10
+        let valueradial = details.vote_average * 10
 
         document.getElementById('popradial').innerHTML += `<div class="radial-progress self-center ${colorradial}" style="--value:${valueradial};" role="progressbar">${iconradial}</div>`
 
@@ -102,13 +102,13 @@ fetch("./assets/js/credits.json")
                 i++
                 if (i <= 4) {
                     document.getElementById('crew').innerHTML += `<div
-                        class="flex bg-gray-200  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
+                        class="flex bg-gray-300  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
                         <div class="avatar">
                             <div class="w-16 h-16 rounded-lg">
                             <img src="https://image.tmdb.org/t/p/original/${item.profile_path} alt"">
                             </div>
                         </div>
-                        <p class="self-center ml-2 font-light">${genrejob} <span class="flex font-bold">${item.name}</span></p>
+                        <p class="self-center ml-2">${genrejob} <span class="flex font-bold">${item.name}</span></p>
                     </div>`
                 }
             }
