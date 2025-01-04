@@ -13,10 +13,11 @@
 
 </head>
 
-<body class="bg-gray-800">
+<body class="bg-base-300">
+
   <!-- NAV -->
 
-  <nav class="bg-slate-900 shadow-sm fixed w-screen z-10">
+  <nav class="bg-base-200 shadow-sm fixed w-screen z-10">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</span>
@@ -55,71 +56,54 @@
     </div>
   </nav>
 
-  <!-- DARK MODE -->
-
-  <!-- <label class=" fixed right-24 bottom-20">
-    <label class="swap swap-rotate fixed right-24 bottom-20">
-      
-      <input type="checkbox" class="theme-controller" value="synthwave" />
-    
-      
-      <svg
-        class="swap-off h-10 w-10 fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24">
-        <path
-          d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-      </svg>
-    
-      
-      <svg
-        class="swap-on h-10 w-10 fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24">
-        <path
-          d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-      </svg>
-    </label>
-  </label> -->
-
   <!-- HERO SECTION -->
 
-  <section class="  bg-gradient-to-b from-orange-600 to-slate-800 h-[100vh] flex flex-col pt-56 justify-center">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 mb-48">
-      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none  md:text-5xl lg:text-6xl text-white">
-        Choisir plutôt que vous laisser guider</h1>
-      <p class="mb-8 text-lg font-normal text-gray-100 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Ici sur Choose,
-        pas d'algorithme pour suivre
-        vos datas ou calculer à l'avance ce qui pourrait vous plaire. Uniquement les infos qui vous permettront de vous
-        forger un avis.
-      </p>
-      <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-        <a href="#affiche"
-          class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-orange-300 dark:focus:ring-blue-900">
-          A l'affiche
-          <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9" />
-          </svg>
-        </a>
-        <a href="#sorties"
-          class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-gray-300 rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-          Prochaines sorties
-        </a>
-        <a href="./movie.html"
-          class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-100 focus:outline-none bg-gray-800 rounded-lg border border-gray-200 hover:bg-gray-600 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-          <i class='bx bx-search-alt text-lg align-middle'></i> Rechercher un film
-        </a>
+  <div class="hero min-h-screen">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+
+      <div class="flex flex-col lg:w-6/12 w-7/12 my-16 lg:my-0">
+        <div class="stack" id="stackhero">
+          <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" class="rounded-lg">
+          <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" class="rounded-lg">
+          <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" class="rounded-lg">
+          <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" class="rounded-lg">
+        </div>
+
+        <div class="flex flex-row mt-14 self-center gap-2">
+          <button><i class='bx bxs-circle text-orange-500'></i></button>
+          <button><i class='bx bxs-circle'></i></button>
+          <button><i class='bx bxs-circle'></i></button>
+
+        </div>
+      </div>
+
+
+      <div class="text-center lg:text-left">
+        <h1 class="text-5xl font-bold text-gray-50"> Choisir plutôt que vous laisser guider</h1>
+        <p class="py-6 text-gray-50">
+          Ici sur Choose,
+          pas d'algorithme pour suivre
+          vos datas ou calculer à l'avance ce qui pourrait vous plaire. Uniquement les infos qui vous permettront de
+          vous
+          forger un avis.
+        </p>
+        <div class="flex flex-row lg:w-full justify-center lg:justify-start gap-2">
+          <a href="#affiche" class="btn bg-orange-500 text-white hover:bg-orange-600 self-center">A l'affiche</a>
+          <a href="#sorties"
+            class="btn bg-orange-100 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-orange-100 hover:border-orange-100  self-center">Prochaines
+            sorties</a>
+          <a href="#search" class="btn bg-orange-500 text-white hover:bg-orange-600 self-center text-xl"><i
+              class='bx bx-search-alt' style='color:#ffffff'></i></a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
 
 
 
   <!-- CE SOIR -->
-  <div class="h-[10vh] bg-slate-900 flex justify-center max-[1080px]:hidden shadow-2xl">
+  <div class="h-[10vh] bg-base-200 flex justify-center max-[1080px]:hidden shadow-2xl">
     <h2 id="tonight" class="text-white self-center font-semibold text-4xl">Ce soir c'est plutôt <span
         class="text-orange-500 typewriter">science-fiction</span> ?</h2>
   </div>
@@ -129,9 +113,10 @@
 
   <div class="my-14 container mx-auto">
     <div class="flex flex-row my-2 mx-2">
-      <h2 class="m-8 text-center text-4xl font-bold text-gray-100 " id="affiche">A l'affiche</h2>
+      <h2 class="m-0 text-center text-4xl font-bold text-gray-100 " id="affiche">A l'affiche</h2>
     </div>
 
+    <div class="divider"></div>
     <section class="flex justify-around flex-col lg:flex-row gap-32 lg:gap-0 min-h-[70vh] flex-wrap m-auto p-0"
       id="card-affiche-section">
 
@@ -189,7 +174,7 @@
   <!-- TRANSITION -->
 
 
-  <div class="h-[70vh] bg-gray-900  flex flex-col lg:flex-row justify-center mt-32 shadow-xl">
+  <div class="h-[70vh] bg-base-200  flex flex-col lg:flex-row justify-center mt-32 shadow-xl">
 
     <div
       class="text-white flex flex-col justify-center gap-12 w-5/12 max-[1100px]:text-center max-[1100px]:w-11/12 max-[1100px]:m-auto">
@@ -220,8 +205,10 @@
 
   <div class="my-14 container mx-auto">
     <div class="flex flex-row my-2 mx-2">
-      <h2 class="m-8 text-center text-4xl font-bold text-gray-100" id="sorties">Prochaines sorties</h2>
+      <h2 class="m-0 text-center text-4xl font-bold text-gray-100 " id="sorties">Prochaines sorties</h2>
     </div>
+
+    <div class="divider"></div>
 
     <section class="flex justify-around flex-row gap-2 lg:gap-8 min-h-[70vh] flex-wrap m-auto p-0 w-11/12"
       id="card-affiche-section2">
@@ -268,7 +255,7 @@
         <option class="text-slate-100">Horreur</option>
       </select>
 
-      <a href="" class="btn btn-neutral"><i class='bx bx-search'></i></a>
+      <a href="" class="btn btn-neutral"><i class='bx bx-search text-lg'></i></a>
 
 
     </div>
@@ -283,7 +270,7 @@
 
   <!-- footer -->
 
-  <footer class="bg-gray-900">
+  <footer class="bg-base-200">
     <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
       <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
         <a class="inline-block rounded-full bg-orange-500 p-2 text-white shadow transition hover:bg-orange-600 sm:p-3 lg:p-4"
