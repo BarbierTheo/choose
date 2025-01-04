@@ -70,23 +70,26 @@
                     <p class="" id="style"></p>
                     <p class="" id="runtime"></p>
                 </div>
+                <div class="flex flex-col min-[1320px]:flex-row justify-between" id="popradial">
+                    <div class="flex flex-col py-4 gap-3 min-[1320px]:flex-row">
+                        <div class="flex bg-slate-900  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
+                            <i class='bx bxs-hot self-center text-3xl'></i>
+                            <div class="flex gap-1 self-center">
+                                <p class="font-semibold">Popularité :</p>
+                                <p id="vote"></p>
+                            </div>
 
-                <div class="flex flex-col py-4 gap-3 min-[1320px]:flex-row">
-                    <div class="flex bg-slate-900  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
-                        <i class='bx bxs-hot self-center text-3xl'></i>
-                        <div class="flex gap-1 self-center">
-                            <p class="font-semibold">Popularité :</p>
-                            <p id="vote"></p>
+                        </div>
+
+                        <div class="flex bg-slate-900  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
+                            <i class='bx bxs-bank self-center text-3xl'></i>
+                            <div class="flex gap-1 self-center">
+                                <p class="font-semibold">Budget :</p>
+                                <p id="budget"></p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="flex bg-slate-900  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
-                        <i class='bx bxs-bank self-center text-3xl'></i>
-                        <div class="flex gap-1 self-center">
-                            <p class="font-semibold">Budget :</p>
-                            <p id="budget"></p>
-                        </div>
-                    </div>
+                    <!-- <div class="radial-progress self-center text-red-600" style="--value:47;" role="progressbar"><p class="text-gray-100">oui</p></div> -->
                 </div>
 
                 <p class="italic text-lg font-semibold" id="tagline">
@@ -225,6 +228,7 @@
     </footer>
 
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./assets/js/lib/moment.js"></script>
     <script src="./assets/js/scriptmovie.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"
         integrity="sha512-hUhvpC5f8cgc04OZb55j0KNGh4eh7dLxd/dPSJ5VyzqDWxsayYbojWyl5Tkcgrmb/RVKCRJI1jNlRbVP4WWC4w=="

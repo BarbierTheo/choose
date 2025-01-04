@@ -1,23 +1,89 @@
+moment.locale('fr')
+
+
+function nFormatter(num, digits) {
+    const lookup = [
+      { value: 1, symbol: "" },
+      { value: 1e3, symbol: "k" },
+      { value: 1e6, symbol: "M" },
+      { value: 1e9, symbol: "G" },
+      { value: 1e12, symbol: "T" },
+      { value: 1e15, symbol: "P" },
+      { value: 1e18, symbol: "E" }
+    ];
+    const regexp = /\.0+$|(?<=\.[0-9]*[1-9])0+$/;
+    const item = lookup.findLast(item => num >= item.value);
+    return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(item.symbol) : "0";
+  }
+  
+  /*
+   * Tests
+   */
+//   const tests = [
+//     { num: 0, digits: 1 },
+//     { num: 12, digits: 1 },
+//     { num: 1234, digits: 1 },
+//     { num: 100000000, digits: 1 },
+//     { num: 299792458, digits: 1 },
+//     { num: 759878, digits: 1 },
+//     { num: 759878, digits: 0 },
+//     { num: 123, digits: 1 },
+//     { num: 123.456, digits: 1 },
+//     { num: 123.456, digits: 2 },
+//     { num: 123.456, digits: 4 }
+//   ];
+//   tests.forEach(test => {
+//     console.log("nFormatter(%f, %i) = %s", test.num, test.digits, nFormatter(test.num, test.digits));
+//   });
+
+
 fetch("./assets/js/details.json")
     .then((reponse) => reponse.json())
     .then((details) => {
+
+
+        const movieruntime = moment.duration(details.runtime, 'minutes');
+
+
         document.getElementById('titlepage').innerText = `Choose - ${details.title}`
 
         document.getElementById('imgmovie').innerHTML += `<img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class=" w-[60vh] lg:skew-y-1 max-w-[90vw] self-center min-[1100px]:self-start">`
 
         document.getElementById('movietitle').innerText = details.title;
-        document.getElementById('year').innerText = "(" + details.release_date + ")";
+        document.getElementById('year').innerText = "(" + moment(details.release_date).format('YYYY') + ")";
 
-        document.getElementById('release').innerText = details.release_date;
+        document.getElementById('release').innerText = moment(details.release_date).format('LL');
         const genre = details.genres.map(genre => genre.name).join(", ")
         document.getElementById('style').innerText = genre;
-        document.getElementById('runtime').innerText = details.runtime
+        document.getElementById('runtime').innerText = `${movieruntime.hours()} h ${movieruntime.minutes()} m`;
 
         document.getElementById('vote').innerText = details.vote_average;
-        document.getElementById('budget').innerText = details.budget + " $";
+        document.getElementById('budget').innerText = nFormatter(details.budget) + " $";
 
         document.getElementById('tagline').innerText = details.tagline
         document.getElementById('synopsis').innerText = details.overview
+
+        if (details.vote_average<=2.5){
+            iconradial = "<i class='bx bx-run text-red-200 text-3xl'></i>"
+            colorradial = "text-red-500"
+        } else if (details.vote_average<=5) {
+            iconradial = "<i class='bx bx-body text-yellow-200 text-3xl'></i>"
+            colorradial = "text-yellow-400"
+        } else if (details.vote_average<=7.5) {
+            iconradial = "<i class='bx bxs-tv text-gray-100 text-3xl'></i>"
+            colorradial = "text-green-300"
+        } else  if (details.vote_average<9){ 
+            iconradial = "<i class='bx bx-check text-green-200 text-3xl'></i>"
+            colorradial = "text-green-500"
+        } else {
+            iconradial = "<i class='bx bxs-star text-yellow-200 text-3xl'></i>"
+            colorradial = "text-gray-100"
+        }
+
+        let valueradial = details.vote_average*10
+
+        document.getElementById('popradial').innerHTML += `<div class="radial-progress self-center ${colorradial}" style="--value:${valueradial};" role="progressbar">${iconradial}</div>`
+
 
     })
 
@@ -108,3 +174,6 @@ function showcard1() {
 }
 
 tocard1.addEventListener("click", showcard1)
+
+// Exemple d'utilisation
+console.log(moment().format('YYYY'));
