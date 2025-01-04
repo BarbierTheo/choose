@@ -174,6 +174,3 @@ function showcard1() {
 }
 
 tocard1.addEventListener("click", showcard1)
-
-// Exemple d'utilisation
-console.log(moment().format('YYYY'));
