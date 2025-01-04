@@ -206,25 +206,50 @@
 
     <div class="divider"></div>
 
-    <section class="flex justify-around flex-row gap-2 lg:gap-8 min-h-[70vh] flex-wrap m-auto p-0 w-11/12"
-      id="card-sorties-section2">
-
-      <!-- <div class="flex flex-col gap-1">
-        <img class="size-64 bg-cover rounded relative" src="" alt="">
-          <div class="bg-gradient-to-r from-slate-900 rounded-t flex justify-between absolute">
-            <div class="flex flex-col justify-between p-2">
-              <h3 class="text-4xl text-white font-bold">Sonic</h3>
-              <p class="text-slate-300">22/10/25</p>
-            </div>
-            <a href="" class="p-5">
-              <i class='bx bxs-info-circle text-white text-4xl'></i>
-            </a>
-          </div>
-        </img>
-      </div> -->
-
+    <section class="flex justify-around flex-row gap-2 lg:gap-8 min-h-[110vh] flex-wrap m-auto p-0 w-11/12"
+      id="card-sorties-section1">
 
     </section>
+
+    <!-- <div class="flex flex-col gap-1">
+      <img class="size-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
+      </img>
+      <div class="flex flex-row-reverse justify-between">
+        <label for="my_modal_${a}" class="">
+          <i class='bx bxs-info-circle text-white text-4xl'></i>
+        </label>
+        <div class="flex flex-col static w-48">
+          <h3 class="text-xl text-white font-bold">${item.title}</h3>
+          <p class="text-slate-300 m-0">${item.release_date}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <input type="checkbox" id="my_modal_${a}" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box w-11/12 max-w-3xl bg-base-100 flex flex-col">
+        <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
+        <div class="flex justify-between">
+          <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
+          <div class="flex flex-col text-right">
+            <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
+            <p class="text-slate-300 font-light">${item.release_date}</p>
+          </div>
+        </div>
+        <p class="text-gray-100">${item.overview}</p>
+      </div>
+      <label class="modal-backdrop" for="my_modal_${a}">Fermer</label>
+    </div> -->
+
+
+    <div class="flex justify-center">
+      <div class="join">
+        <button class="join-item btn btn-active" id="buttoncardaffiche1">1</button>
+        <button class="join-item btn" id="buttoncardaffiche2">2</button>
+        <button class="join-item btn" id="buttoncardaffiche3">3</button>
+      </div>
+    </div>
   </div>
 
   <!-- RECHERCHER UN FILM -->
@@ -243,7 +268,7 @@
       </label>
 
       <select class="select lg:w-2/12 max-w-xs">
-        <option disabled selected class="text-slate-300">Choisissez un style</option>
+        <option disabled selected class="text-slate-300">Choisissez un genre</option>
         <option class="text-slate-100">Science-fiction</option>
         <option class="text-slate-100">Drame</option>
         <option class="text-slate-100">Romance</option>

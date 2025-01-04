@@ -81,7 +81,7 @@ fetch("./assets/js/movies.json")
               <div class="flex justify-between">
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
-                  <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
+                  <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
                   <p class="text-gray-200 font-light">${item.release_date}</p>
                 </div>
               </div>
@@ -106,7 +106,7 @@ fetch("./assets/js/movies.json")
               <div class="flex justify-between">
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
-                  <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
+                  <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
                   <p class="text-gray-200 font-light">${item.release_date}</p>
                 </div>
               </div>
@@ -131,7 +131,7 @@ fetch("./assets/js/movies.json")
               <div class="flex justify-between">
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
-                  <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
+                  <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
                   <p class="text-gray-200 font-light">${item.release_date}</p>
                 </div>
               </div>
@@ -156,7 +156,7 @@ fetch("./assets/js/movies.json")
             <div class="flex justify-between">
               <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
               <div class="flex flex-col text-right">
-                <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
+                <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
                 <p class="text-gray-200 font-light">${item.release_date}</p>
               </div>
             </div>
@@ -176,25 +176,25 @@ fetch("./assets/js/movies.json")
 
 // PAGINATION BTN 1
 
-  const toggleaffiche1 = document.getElementById("buttoncardaffiche1");
-  function showaffiche1() {
+const toggleaffiche1 = document.getElementById("buttoncardaffiche1");
+function showaffiche1() {
 
-    document.getElementById("card-affiche-section4").classList.remove('flex')
-    document.getElementById("card-affiche-section4").classList.add('hidden')
+  document.getElementById("card-affiche-section4").classList.remove('flex')
+  document.getElementById("card-affiche-section4").classList.add('hidden')
 
-    document.getElementById("card-affiche-section3").classList.remove('flex')
-    document.getElementById("card-affiche-section3").classList.add('hidden')
-    
-    document.getElementById("card-affiche-section2").classList.remove('flex')
-    document.getElementById("card-affiche-section2").classList.add('hidden')
+  document.getElementById("card-affiche-section3").classList.remove('flex')
+  document.getElementById("card-affiche-section3").classList.add('hidden')
 
-    document.getElementById("card-affiche-section1").classList.remove('hidden')
-    document.getElementById("card-affiche-section1").classList.add('flex')
+  document.getElementById("card-affiche-section2").classList.remove('flex')
+  document.getElementById("card-affiche-section2").classList.add('hidden')
 
-    document.getElementById("buttoncardaffiche1").classList.add('btn-active')
-    document.getElementById("buttoncardaffiche2").classList.remove('btn-active')
-    document.getElementById("buttoncardaffiche3").classList.remove('btn-active')
-    document.getElementById("buttoncardaffiche4").classList.remove('btn-active')
+  document.getElementById("card-affiche-section1").classList.remove('hidden')
+  document.getElementById("card-affiche-section1").classList.add('flex')
+
+  document.getElementById("buttoncardaffiche1").classList.add('btn-active')
+  document.getElementById("buttoncardaffiche2").classList.remove('btn-active')
+  document.getElementById("buttoncardaffiche3").classList.remove('btn-active')
+  document.getElementById("buttoncardaffiche4").classList.remove('btn-active')
 
 }
 toggleaffiche1.addEventListener("click", showaffiche1)
@@ -209,13 +209,13 @@ function showaffiche2() {
 
   document.getElementById("card-affiche-section3").classList.remove('flex')
   document.getElementById("card-affiche-section3").classList.add('hidden')
-  
+
   document.getElementById("card-affiche-section1").classList.remove('flex')
   document.getElementById("card-affiche-section1").classList.add('hidden')
 
   document.getElementById("card-affiche-section2").classList.remove('hidden')
   document.getElementById("card-affiche-section2").classList.add('flex')
-  
+
   document.getElementById("buttoncardaffiche2").classList.add('btn-active')
   document.getElementById("buttoncardaffiche1").classList.remove('btn-active')
   document.getElementById("buttoncardaffiche3").classList.remove('btn-active')
@@ -234,13 +234,13 @@ function showaffiche3() {
 
   document.getElementById("card-affiche-section2").classList.remove('flex')
   document.getElementById("card-affiche-section2").classList.add('hidden')
-  
+
   document.getElementById("card-affiche-section1").classList.remove('flex')
   document.getElementById("card-affiche-section1").classList.add('hidden')
 
   document.getElementById("card-affiche-section3").classList.remove('hidden')
   document.getElementById("card-affiche-section3").classList.add('flex')
-  
+
   document.getElementById("buttoncardaffiche3").classList.add('btn-active')
   document.getElementById("buttoncardaffiche2").classList.remove('btn-active')
   document.getElementById("buttoncardaffiche1").classList.remove('btn-active')
@@ -259,13 +259,13 @@ function showaffiche4() {
 
   document.getElementById("card-affiche-section2").classList.remove('flex')
   document.getElementById("card-affiche-section2").classList.add('hidden')
-  
+
   document.getElementById("card-affiche-section1").classList.remove('flex')
   document.getElementById("card-affiche-section1").classList.add('hidden')
 
   document.getElementById("card-affiche-section4").classList.remove('hidden')
   document.getElementById("card-affiche-section4").classList.add('flex')
-  
+
   document.getElementById("buttoncardaffiche4").classList.add('btn-active')
   document.getElementById("buttoncardaffiche2").classList.remove('btn-active')
   document.getElementById("buttoncardaffiche1").classList.remove('btn-active')
@@ -288,42 +288,43 @@ fetch("./assets/js/nextMovies.json")
     for (item of movies["results"]) {
       a = a - 1;
 
-      if (a>=-10) {
+      if (a >= -10) {
+        document.getElementById("card-sorties-section1").innerHTML += `
+        <div class="flex flex-col gap-1">
+      <img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
+      </img>
+      <div class="flex flex-row-reverse justify-between">
+        <label for="my_modal_${a}" class="self-center">
+          <i class='bx bxs-info-circle text-white text-2xl'></i>
+        </label>
+        <div class="flex flex-col w-48">
+          <h3 class="text-lg text-white font-bold">${item.title}</h3>
+          <p class="text-slate-300">${item.release_date}</p>
+        </div>
+      </div>
+    </div>
 
+
+    <input type="checkbox" id="my_modal_${a}" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box w-11/12 max-w-3xl bg-base-100 flex flex-col">
+        <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
+        <div class="flex justify-between">
+          <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
+          <div class="flex flex-col text-right">
+            <p class="text-gray-100 font-medium"> ${item.vote_average/2}  <i class='bx bxs-star'></i></p>
+            <p class="text-slate-300 font-light">${item.release_date}</p>
+          </div>
+        </div>
+        <p class="text-gray-100">${item.overview}</p>
+      </div>
+      <label class="modal-backdrop" for="my_modal_${a}">Fermer</label>
+    </div>
+        `
 
       }
 
-      document.querySelector("#card-sorties-section2").innerHTML += `
-       <div class="flex flex-col gap-1 relative">
-           <img class="size-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
-           </img>
-         <div class="bg-gradient-to-r from-slate-900  absolute rounded-t flex justify-between w-full">
-            <div class="flex flex-col justify-between p-2 leading-2">
-              <h3 class="text-xl text-white font-bold m-0">${item.title}</h3>
-              <p class="text-slate-300 m-0">${item.release_date}</p>
-            </div>
-            <label for="my_modal_${a}" class="p-5 text-right">
-              <i class='bx bxs-info-circle text-white text-4xl'></i>
-            </label>
-          </div>
-       </div>
 
-             <input type="checkbox" id="my_modal_${a}" class="modal-toggle" />
-       <div class="modal" role="dialog">
-  <div class="modal-box w-11/12 max-w-3xl bg-base-100 flex flex-col">
-    <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
-    <div class="flex justify-between">
-      <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
-      <div class="flex flex-col text-right">
-        <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
-        <p class="text-slate-300 font-light">${item.release_date}</p>
-      </div>
-    </div>
-    <p class="text-gray-100">${item.overview}</p>
-  </div>
-  <label class="modal-backdrop" for="my_modal_${a}">Close</label>
-</div>
-       `;
     }
   });
 

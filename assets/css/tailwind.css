@@ -4157,6 +4157,14 @@ details.collapse summary::-webkit-details-marker {
   margin-top: -10rem;
 }
 
+.mt-\[-5rem\] {
+  margin-top: -5rem;
+}
+
+.mt-\[-3rem\] {
+  margin-top: -3rem;
+}
+
 .block {
   display: block;
 }
@@ -4284,6 +4292,22 @@ details.collapse summary::-webkit-details-marker {
   min-height: 65vh;
 }
 
+.min-h-\[100vh\] {
+  min-height: 100vh;
+}
+
+.min-h-\[120vh\] {
+  min-height: 120vh;
+}
+
+.min-h-\[110vh\] {
+  min-height: 110vh;
+}
+
+.min-h-\[115vh\] {
+  min-height: 115vh;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -4355,6 +4379,34 @@ details.collapse summary::-webkit-details-marker {
 
 .w-56 {
   width: 14rem;
+}
+
+.w-\[24rem\] {
+  width: 24rem;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
+.w-52 {
+  width: 13rem;
+}
+
+.w-44 {
+  width: 11rem;
 }
 
 .max-w-3xl {
@@ -4447,6 +4499,11 @@ details.collapse summary::-webkit-details-marker {
   resize: both;
 }
 
+.break-before-auto {
+  -moz-column-break-before: auto;
+       break-before: auto;
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -4457,6 +4514,10 @@ details.collapse summary::-webkit-details-marker {
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -4573,6 +4634,10 @@ details.collapse summary::-webkit-details-marker {
 
 .text-wrap {
   text-wrap: wrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .break-all {
