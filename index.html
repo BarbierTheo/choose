@@ -112,64 +112,59 @@
 
 
 
-  <div class="my-14 container mx-auto">
+  <div class="mt-16 container mx-auto min-h-[65vh]">
     <div class="flex flex-row my-2 mx-2">
       <h2 class="m-0 text-center text-4xl font-bold text-gray-100 " id="affiche">A l'affiche</h2>
     </div>
 
     <div class="divider"></div>
-    <section class="flex justify-around flex-col lg:flex-row gap-32 lg:gap-0 min-h-[70vh] flex-wrap m-auto p-0"
-      id="card-affiche-section">
-
-      <!-- CARD -->
-      <!-- 
-      <label for="my_modal_7"><div
-        class="bg-slate-500 w-[80vw] lg:w-[23rem] h-[38rem] flex rounded-lg self-center bg-gradient-to-t from-slate-950 from-50% via-slate-700 via-70% cursor-pointer">
-        <div class="m-8 gap-4 flex flex-col self-end text-white">
-          <h3 class="text-3xl font-semibold">Dune</h3>
-          <div class="flex justify-between">
-            <div class="flex flex-col self-end">
-              <small>Date de sortie</small>
-              <p>15 septembre 2021</p>
-            </div>
-            <div class="flex flex-col self-end">
-              <small>Popularité</small>
-              <p>445.124</p>
-            </div>
-            <p class="">+18</p>
-          </div>
-          <p>
-            Vaiana 2 embarquera les spectateurs dans un périple inédit en compagnie de Vaiana, Maui et d’un improbable
-            nouvel équipage de marins. Après avoir reçu un appel inattendu de ses ancêtres, la jeune femme entreprend un
-            voyage qui la conduira jusqu’aux eaux dangereuses des confins des mers d’Océanie pour y vivre une aventure
-            comme jamais vécue auparavant.
-          </p>
-        </div>
-      </div></button>
-
-    
-<input type="checkbox" id="my_modal_7" class="modal-toggle" />
-<div class="modal" role="dialog">
-  <div class="modal-box w-11/12 max-w-5xl bg-white flex flex-col">
-    <img src="./assets/img/watching-a-3d-movie-1950s-v0-ax7ggsjzw8yb1.webp" class="h-[28rem] object-scale-down" alt="">
-    <div class="flex justify-between">
-      <h3 class="text-3xl font-bold text-slate-950">Sonic</h3>
-      <div class="flex flex-col text-right">
-        <p class="text-slate-700 font-medium"><i class='bx bxs-star'></i> 154564</p>
-        <p class="text-slate-600 font-light">28/12/54</p>
-      </div>
-    </div>
-    <p class="text-slate-900">Description du film</p>
-  </div>
-  <label class="modal-backdrop" for="my_modal_7">Close</label>
-</div>
- -->
-
-
-
+    <section class="flex justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+      id="card-affiche-section1">
     </section>
+    <section class="hidden justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+      id="card-affiche-section2">
+    </section>
+    <section class="hidden justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+      id="card-affiche-section3">
+    </section>
+    <section class="hidden justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+      id="card-affiche-section4">
+    </section>
+
+    <!-- CARD -->
+
+    <!-- <label for="my_modal_${i}" class="flex flex-col justify-between h-fit">
+        <img src="https://image.tmdb.org/t/p/w500${item.poster_path}"
+          class="hover:shadow-sm flex rounded-lg self-center cursor-pointer md:w-[20rem] lg:w-[17rem] duration-300 ease-in-out ">
+          <p class="mt-1 font-bold text-lg">${item.title}</p>
+      </label>
+
+      <input type="checkbox" id="my_modal_${i}" class="modal-toggle" />
+      <div class="modal" role="dialog">
+        <div class="modal-box w-11/12 max-w-3xl bg-base-100 flex flex-col shadow-2xl">
+          <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
+          <div class="flex justify-between">
+            <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
+            <div class="flex flex-col text-right">
+              <p class="text-gray-100 font-medium"><i class='bx bxs-star'></i> ${item.popularity}</p>
+              <p class="text-gray-200 font-light">${item.release_date}</p>
+            </div>
+          </div>
+          <p class="text-slate-100">${item.overview}</p>
+        </div>
+        <label class="modal-backdrop" for="my_modal_${i}">Close</label>
+      </div> -->
+
   </div>
 
+  <div class="flex justify-center">
+    <div class="join">
+      <button class="join-item btn btn-active" id="buttoncardaffiche1">1</button>
+      <button class="join-item btn" id="buttoncardaffiche2">2</button>
+      <button class="join-item btn" id="buttoncardaffiche3">3</button>
+      <button class="join-item btn" id="buttoncardaffiche4">4</button>
+    </div>
+  </div>
 
 
   <!-- TRANSITION -->
@@ -212,7 +207,7 @@
     <div class="divider"></div>
 
     <section class="flex justify-around flex-row gap-2 lg:gap-8 min-h-[70vh] flex-wrap m-auto p-0 w-11/12"
-      id="card-affiche-section2">
+      id="card-sorties-section2">
 
       <!-- <div class="flex flex-col gap-1">
         <img class="size-64 bg-cover rounded relative" src="" alt="">
