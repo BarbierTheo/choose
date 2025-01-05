@@ -1,3 +1,5 @@
+moment.locale('fr')
+
 // UNIQUEMENT POUR L'ESSAI
 fetch("./assets/js/details.json")
   .then((reponse) => reponse.json())
@@ -82,7 +84,7 @@ fetch("./assets/js/movies.json")
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
                   <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-                  <p class="text-gray-200 font-light">${item.release_date}</p>
+                  <p class="text-gray-200 font-light">${moment(item.release_date).format( 'LL' )}</p>
                 </div>
               </div>
               <p class="text-slate-100">${item.overview}</p>
@@ -107,7 +109,7 @@ fetch("./assets/js/movies.json")
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
                   <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-                  <p class="text-gray-200 font-light">${item.release_date}</p>
+                  <p class="text-gray-200 font-light">${moment(item.release_date).format( 'LL' )}</p>
                 </div>
               </div>
               <p class="text-slate-100">${item.overview}</p>
@@ -132,7 +134,7 @@ fetch("./assets/js/movies.json")
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
                   <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-                  <p class="text-gray-200 font-light">${item.release_date}</p>
+                  <p class="text-gray-200 font-light">${moment(item.release_date).format( 'LL' )}</p>
                 </div>
               </div>
               <p class="text-slate-100">${item.overview}</p>
@@ -157,7 +159,7 @@ fetch("./assets/js/movies.json")
               <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
               <div class="flex flex-col text-right">
                 <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-                <p class="text-gray-200 font-light">${item.release_date}</p>
+                <p class="text-gray-200 font-light">${moment(item.release_date).format( 'LL' )}</p>
               </div>
             </div>
             <p class="text-slate-100">${item.overview}</p>
@@ -300,7 +302,7 @@ fetch("./assets/js/nextMovies.json")
         </label>
         <div class="flex flex-col w-48">
           <h3 class="text-lg text-white font-bold">${item.title}</h3>
-          <p class="text-slate-300">${item.release_date}</p>
+          <p class="text-slate-300">${moment(item.release_date).format( 'L' )}</p>
         </div>
       </div>
     </div>
@@ -314,7 +316,7 @@ fetch("./assets/js/nextMovies.json")
           <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
           <div class="flex flex-col text-right">
             <p class="text-gray-100 font-medium"> ${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-            <p class="text-slate-300 font-light">${item.release_date}</p>
+            <p class="text-slate-300 font-light">${moment(item.release_date).format( 'LL' )}</p>
           </div>
         </div>
         <p class="text-gray-100">${item.overview}</p>
@@ -337,7 +339,7 @@ fetch("./assets/js/nextMovies.json")
               </label>
              <div class="flex flex-col w-48">
               <h3 class="text-lg text-white font-bold">${item.title}</h3>
-                <p class="text-slate-300">${item.release_date}</p>
+                <p class="text-slate-300">${moment(item.release_date).format( 'L' )}</p>
               </div>
            </div>
                </div>
@@ -351,7 +353,7 @@ fetch("./assets/js/nextMovies.json")
           <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
           <div class="flex flex-col text-right">
             <p class="text-gray-100 font-medium"> ${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-            <p class="text-slate-300 font-light">${item.release_date}</p>
+            <p class="text-slate-300 font-light">${moment(item.release_date).format( 'LL' )}</p>
           </div>
         </div>
         <p class="text-gray-100">${item.overview}</p>
