@@ -4,11 +4,12 @@ moment.locale('fr')
 fetch("./assets/js/details.json")
   .then((reponse) => reponse.json())
   .then((details) => {
-    document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack1"><img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class="rounded-lg"></a>`;
+    document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack0"><img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class="rounded-lg"></a>`;
   })
 
 
-// CHATGPT
+
+// CHATGPT TRANSITION
 
 const config = {
   words: [
@@ -48,7 +49,10 @@ function type() {
 
 type();
 
-// CHATGPT
+// CHATGPT TRANSITION
+
+
+// A L'AFFICHE
 
 let i = 0;
 
@@ -59,15 +63,27 @@ fetch("./assets/js/movies.json")
 
     // STACK HERO HEADER
     // for (let stackrandom = 0; stackrandom <= 2; stackrandom++) {
-    //   document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack${stackrandom}"><img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class="rounded-lg"></a>`;
-    //   console.log(6)
+    //   document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack1"><img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="poster_${details.title}" class="rounded-lg"></a>`;
     // }
 
 
     // CARDS FILMS A L'AFFICHE
     let sortiepage = 0
     for (item of movies["results"]) {
+
+
       i++;
+
+
+      // ONLY FOR STARTING
+
+      if (i <= 2) {
+        document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack${i}"><img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="poster_${item.title}" class="rounded-lg"></a>`;
+      }
+
+      // ONLY FOR STARTING
+
+
       if (i <= 5) {
         sortiepage = 1
       } else if (i <= 10) {
@@ -78,7 +94,7 @@ fetch("./assets/js/movies.json")
         sortiepage = 4
       }
 
-        document.getElementById(`card-affiche-section${sortiepage}`).innerHTML += `
+      document.getElementById(`card-affiche-section${sortiepage}`).innerHTML += `
             <label for="my_modal_${i}" class="flex flex-col mx-4 lg:m-0">
             <img src="https://image.tmdb.org/t/p/w500${item.poster_path}"
               class="hover:shadow-sm flex rounded-lg self-center cursor-pointer lg:w-[17rem] duration-300 ease-in-out lg:h-[26rem]">
@@ -101,12 +117,62 @@ fetch("./assets/js/movies.json")
             <label class="modal-backdrop" for="my_modal_${i}">Close</label>
           </div>
     `;
-
-
-
-
-
     }
+
+    // PAGINATION STACK - A NE PAS MOVE CAR DOIT CHARGER LE JS
+
+    const stack1 = document.getElementById('stack0')
+    const stack2 = document.getElementById('stack1')
+    const stack3 = document.getElementById('stack2')
+
+    const stackhero = document.getElementById('stackhero')
+
+    const btnstack1 = document.getElementById('btnstack1')
+    const btnstack2 = document.getElementById('btnstack2')
+    const btnstack3 = document.getElementById('btnstack3')
+
+
+    // BTN1
+
+    const togglestack1 = document.getElementById("btnstack1");
+    function showstack1() {
+      btnstack1.classList.add('text-orange-500')
+      btnstack2.classList.remove('text-orange-500')
+      btnstack3.classList.remove('text-orange-500')
+
+      stackhero.appendChild(stack1)
+      stackhero.appendChild(stack2)
+      stackhero.appendChild(stack3)
+    }
+    togglestack1.addEventListener("click", showstack1)
+
+    // BTN2
+
+    const togglestack2 = document.getElementById("btnstack2");
+    function showstack2() {
+      btnstack1.classList.remove('text-orange-500')
+      btnstack2.classList.add('text-orange-500')
+      btnstack3.classList.remove('text-orange-500')
+
+      stackhero.appendChild(stack2)
+      stackhero.appendChild(stack1)
+      stackhero.appendChild(stack3)
+    }
+    togglestack2.addEventListener("click", showstack2)
+
+    // BTN3
+
+    const togglestack3 = document.getElementById("btnstack3");
+    function showstack3() {
+      btnstack1.classList.remove('text-orange-500')
+      btnstack2.classList.remove('text-orange-500')
+      btnstack3.classList.add('text-orange-500')
+
+      stackhero.appendChild(stack3)
+      stackhero.appendChild(stack2)
+      stackhero.appendChild(stack1)
+    }
+    togglestack3.addEventListener("click", showstack3)
   });
 
 
@@ -215,6 +281,7 @@ toggleaffiche4.addEventListener("click", showaffiche4)
 
 
 
+
 // AFFICHAGE DES CARTES PROCHAINES SORTIES
 
 let a = 0;
@@ -236,7 +303,7 @@ fetch("./assets/js/nextMovies.json")
       <img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
       </img>
       <div class="flex flex-row-reverse justify-between">
-        <label for="my_modal_${a}" class="self-center">
+        <label for="my_modal_${a}" class="self-center cursor-pointer">
           <i class='bx bxs-info-circle text-white text-2xl'></i>
         </label>
         <div class="flex flex-col w-48">
