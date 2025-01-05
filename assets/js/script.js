@@ -68,7 +68,7 @@ fetch("./assets/js/movies.json")
       i++;
       if (i <= 5) {
         document.getElementById('card-affiche-section1').innerHTML += `
-            <label for="my_modal_${i}" class="flex flex-col">
+            <label for="my_modal_${i}" class="flex flex-col mx-4 lg:m-0">
             <img src="https://image.tmdb.org/t/p/w500${item.poster_path}"
               class="hover:shadow-sm flex rounded-lg self-center cursor-pointer lg:w-[17rem] duration-300 ease-in-out lg:h-[26rem]">
               <p class="mt-1 font-bold text-lg lg:text-left text-center w-56 self-center lg:self-start">${item.title}</p>
@@ -81,7 +81,7 @@ fetch("./assets/js/movies.json")
               <div class="flex justify-between">
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
-                  <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
+                  <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
                   <p class="text-gray-200 font-light">${item.release_date}</p>
                 </div>
               </div>
@@ -106,7 +106,7 @@ fetch("./assets/js/movies.json")
               <div class="flex justify-between">
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
-                  <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
+                  <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
                   <p class="text-gray-200 font-light">${item.release_date}</p>
                 </div>
               </div>
@@ -131,7 +131,7 @@ fetch("./assets/js/movies.json")
               <div class="flex justify-between">
                 <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
                 <div class="flex flex-col text-right">
-                  <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
+                  <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
                   <p class="text-gray-200 font-light">${item.release_date}</p>
                 </div>
               </div>
@@ -156,7 +156,7 @@ fetch("./assets/js/movies.json")
             <div class="flex justify-between">
               <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
               <div class="flex flex-col text-right">
-                <p class="text-gray-100 font-medium">${item.vote_average/2}  <i class='bx bxs-star'></i></p>
+                <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
                 <p class="text-gray-200 font-light">${item.release_date}</p>
               </div>
             </div>
@@ -289,6 +289,7 @@ fetch("./assets/js/nextMovies.json")
       a = a - 1;
 
       if (a >= -10) {
+
         document.getElementById("card-sorties-section1").innerHTML += `
         <div class="flex flex-col gap-1">
       <img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
@@ -312,7 +313,7 @@ fetch("./assets/js/nextMovies.json")
         <div class="flex justify-between">
           <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
           <div class="flex flex-col text-right">
-            <p class="text-gray-100 font-medium"> ${item.vote_average/2}  <i class='bx bxs-star'></i></p>
+            <p class="text-gray-100 font-medium"> ${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
             <p class="text-slate-300 font-light">${item.release_date}</p>
           </div>
         </div>
@@ -322,8 +323,79 @@ fetch("./assets/js/nextMovies.json")
     </div>
         `
 
+      } else {
+
+        if (a >= -20) {
+
+          document.getElementById("card-sorties-section2").innerHTML += `
+            <div class="flex flex-col gap-1">
+             <img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
+             </img>
+             <div class="flex flex-row-reverse justify-between">
+                <label for="my_modal_${a}" class="self-center">
+                <i class='bx bxs-info-circle text-white text-2xl'></i>
+              </label>
+             <div class="flex flex-col w-48">
+              <h3 class="text-lg text-white font-bold">${item.title}</h3>
+                <p class="text-slate-300">${item.release_date}</p>
+              </div>
+           </div>
+               </div>
+
+
+    <input type="checkbox" id="my_modal_${a}" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box w-11/12 max-w-3xl bg-base-100 flex flex-col">
+        <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
+        <div class="flex justify-between">
+          <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
+          <div class="flex flex-col text-right">
+            <p class="text-gray-100 font-medium"> ${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
+            <p class="text-slate-300 font-light">${item.release_date}</p>
+          </div>
+        </div>
+        <p class="text-gray-100">${item.overview}</p>
+      </div>
+      <label class="modal-backdrop" for="my_modal_${a}">Fermer</label>
+    </div>
+        `
+        }
+
       }
 
+      // PAGINATION BTN 1 SORTIES
+
+      const togglesortie1 = document.getElementById("buttoncardsortie1");
+      function showsortie1() {
+
+        document.getElementById("card-sorties-section2").classList.remove('flex')
+        document.getElementById("card-sorties-section2").classList.add('hidden')
+
+        document.getElementById("card-sorties-section1").classList.remove('hidden')
+        document.getElementById("card-sorties-section1").classList.add('flex')
+
+        document.getElementById("buttoncardsortie1").classList.add('btn-active')
+        document.getElementById("buttoncardsortie2").classList.remove('btn-active')
+
+      }
+      togglesortie1.addEventListener("click", showsortie1)
+
+      // PAGINATION BTN 1 SORTIES
+
+      const togglesortie2 = document.getElementById("buttoncardsortie2");
+      function showsortie2() {
+
+        document.getElementById("card-sorties-section1").classList.remove('flex')
+        document.getElementById("card-sorties-section1").classList.add('hidden')
+
+        document.getElementById("card-sorties-section2").classList.remove('hidden')
+        document.getElementById("card-sorties-section2").classList.add('flex')
+
+        document.getElementById("buttoncardsortie2").classList.add('btn-active')
+        document.getElementById("buttoncardsortie1").classList.remove('btn-active')
+
+      }
+      togglesortie2.addEventListener("click", showsortie2)
 
     }
   });

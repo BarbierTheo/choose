@@ -4077,6 +4077,21 @@ details.collapse summary::-webkit-details-marker {
   margin-bottom: 0.5rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-12 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -5305,6 +5320,22 @@ details.collapse summary::-webkit-details-marker {
   transition-duration: 300ms;
 }
 
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -5389,6 +5420,16 @@ details.collapse summary::-webkit-details-marker {
 .hover\:text-orange-500:hover {
   --tw-text-opacity: 1;
   color: rgb(255 90 31 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-orange-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 138 76 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-gray-50:hover {
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity, 1));
 }
 
 .hover\:shadow-sm:hover {
@@ -5639,6 +5680,10 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:top-8 {
     top: 2rem;
+  }
+
+  .lg\:m-0 {
+    margin: 0px;
   }
 
   .lg\:mx-0 {
