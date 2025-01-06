@@ -89,8 +89,8 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
 
       // ONLY FOR STARTING
 
-      if (i <= 2) {
-        document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack${i}"><img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="poster_${item.title}" class="rounded-lg"></a>`;
+      if (i <= 3) {
+        document.getElementById('stackhero').innerHTML += `<a href="./movie.html?idMovie=${item.id}" id="stack${i}"><img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="poster_${item.title}" class="rounded-lg"></a>`;
       }
 
       // ONLY FOR STARTING
