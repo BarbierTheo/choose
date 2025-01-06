@@ -1,5 +1,8 @@
 moment.locale('fr')
 
+
+
+
 // UNIQUEMENT POUR L'ESSAI
 fetch("./assets/js/details.json")
   .then((reponse) => reponse.json())
@@ -56,8 +59,17 @@ type();
 
 let i = 0;
 
-fetch("./assets/js/movies.json")
-  .then((reponse) => reponse.json())
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDU1MjRlYzBhY2Y5NzZjNmFlMGI0YjM1NTk5ZTA3MiIsIm5iZiI6MTczNTgxOTY0Ny41OTEsInN1YiI6IjY3NzY4MTdmMTk0YjU4MTZkNzYxNTk0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vupVyDYfK3m2DfMLHAi2F4XKDSTxCy5FPrGDzwbqIZY'
+  }
+};
+
+fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&region=FR', options)
+  .then((response) => response.json())
   .then((movies) => {
 
 
@@ -95,11 +107,11 @@ fetch("./assets/js/movies.json")
       }
 
       document.getElementById(`card-affiche-section${sortiepage}`).innerHTML += `
-            <label for="my_modal_${i}" class="flex flex-col mx-4 lg:m-0">
+            <a href="./movie.html?idMovie=${item.id}" class="flex flex-col mx-4 lg:m-0">
             <img src="https://image.tmdb.org/t/p/w500${item.poster_path}"
               class="hover:shadow-sm flex rounded-lg self-center cursor-pointer lg:w-[17rem] duration-300 ease-in-out lg:h-[26rem]">
               <p class="mt-1 font-bold text-lg lg:text-left text-center w-56 self-center lg:self-start">${item.title}</p>
-            </label>
+            <a>
     
           <input type="checkbox" id="my_modal_${i}" class="modal-toggle" />
           <div class="modal" role="dialog">

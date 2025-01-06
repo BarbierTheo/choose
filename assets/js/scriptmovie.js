@@ -1,6 +1,5 @@
 moment.locale('fr')
 
-
 function nFormatter(num, digits) {
     const lookup = [
         { value: 1, symbol: "" },
@@ -41,6 +40,7 @@ fetch("./assets/js/details.json")
     .then((reponse) => reponse.json())
     .then((details) => {
 
+        
 
         const movieruntime = moment.duration(details.runtime, 'minutes');
 
