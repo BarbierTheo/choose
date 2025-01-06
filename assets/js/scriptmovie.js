@@ -35,11 +35,22 @@ function nFormatter(num, digits) {
 //     console.log("nFormatter(%f, %i) = %s", test.num, test.digits, nFormatter(test.num, test.digits));
 //   });
 
+let params = new URLSearchParams(document.location.search);
+let id = params.get("idMovie")
 
-fetch("./assets/js/details.json")
+
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDU1MjRlYzBhY2Y5NzZjNmFlMGI0YjM1NTk5ZTA3MiIsIm5iZiI6MTczNTgxOTY0Ny41OTEsInN1YiI6IjY3NzY4MTdmMTk0YjU4MTZkNzYxNTk0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vupVyDYfK3m2DfMLHAi2F4XKDSTxCy5FPrGDzwbqIZY'
+    }
+  };
+  
+  fetch(`https://api.themoviedb.org/3/movie/${id}?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((details) => {
-const movieruntime = moment.duration(details.runtime, 'minutes');
+        const movieruntime = moment.duration(details.runtime, 'minutes');
 
 
         document.getElementById('titlepage').innerText = `Choose - ${details.title}`
@@ -78,18 +89,19 @@ const movieruntime = moment.duration(details.runtime, 'minutes');
         }
 
         let valueradial = details.vote_average * 10
+        
 
         document.getElementById('popradial').innerHTML += `<div class="radial-progress self-center ${colorradial}" style="--value:${valueradial};" role="progressbar">${iconradial}</div>`
 
 
     })
 
-fetch("./assets/js/credits.json")
+    fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((credits) => {
         let i = 0
         for (item of credits.crew) {
-            if (item.job === "Director") {
+            if (item.job == "Director") {
                 let genrejob = ""
                 if (item.gender == 1) {
                     genrejob = "Réalisatrice"
@@ -116,38 +128,34 @@ fetch("./assets/js/credits.json")
             a++
             if (a <= 8) {
                 if (a <= 4) {
-                    document.getElementById('casting').innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
-                    <div class="avatar self-center">
-                        <div class="w-36 rounded-xl">
-                            <img
-                                src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
-                        </div>
-                    </div>
-                    <p class="text-lg font-bold mt-1">${item.name}</p>
-                    <p class="italic">${item.character}</p>
-                </div>`
-
+                incr = 1
                 }
                 else {
-                    document.getElementById('casting2').innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
-                    <div class="avatar self-center">
-                        <div class="w-36 rounded-xl">
-                            <img
-                                src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
-                        </div>
-                    </div>
-                    <p class="text-lg font-bold mt-1">${item.name}</p>
-                    <p class="italic">${item.character}</p>
-                </div>`
+                    incr = 2
+                    console.log(5)
                 }
             }
+            if (a <= 8) {
+            document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+            <div class="avatar self-center">
+                <div class="w-36 rounded-xl">
+                    <img
+                        src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
+                </div>
+            </div>
+            <p class="text-lg font-bold mt-1">${item.name}</p>
+            <p class="italic">${item.character}</p>
+        </div>`   }
         }
+
+
+        
     })
 
 const tocard2 = document.getElementById("tocard2");
 function showcard2() {
-    document.getElementById("casting").classList.remove('flex')
-    document.getElementById("casting").classList.add('hidden')
+    document.getElementById("casting1").classList.remove('flex')
+    document.getElementById("casting1").classList.add('hidden')
 
     document.getElementById("casting2").classList.remove('hidden')
     document.getElementById("casting2").classList.add('flex')
@@ -160,8 +168,8 @@ tocard2.addEventListener("click", showcard2)
 
 const tocard1 = document.getElementById("tocard1");
 function showcard1() {
-    document.getElementById("casting").classList.remove('hidden')
-    document.getElementById("casting").classList.add('flex')
+    document.getElementById("casting1").classList.remove('hidden')
+    document.getElementById("casting1").classList.add('flex')
 
     document.getElementById("casting2").classList.remove('flex')
     document.getElementById("casting2").classList.add('hidden')
