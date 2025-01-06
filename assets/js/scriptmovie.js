@@ -119,28 +119,28 @@ fetch("./assets/js/credits.json")
             a++
             if (a <= 8) {
                 if (a <= 4) {
-                    document.getElementById('casting').innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
-                            <div class="avatar">
-                                <div class="w-48 rounded-xl">
-                                    <img
-                                        src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
-                                </div>
-                            </div>
-                            <p class="text-lg font-bold mt-1">${item.name}</p>
-                            <p class="italic leading-1">${item.character}</p>
-                        </div>`
-
-                }
-                else {
-                    document.getElementById('casting2').innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
-                    <div class="avatar">
-                        <div class="w-48 rounded-xl">
+                    document.getElementById('casting').innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+                    <div class="avatar self-center">
+                        <div class="w-36 rounded-xl">
                             <img
                                 src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
                         </div>
                     </div>
                             <p class="text-lg font-bold mt-1">${item.name}</p>
-                            <p class="italic leading-1">${item.character}</p>
+                            <p class="italic">${item.character}</p>
+                </div>`
+
+                }
+                else {
+                    document.getElementById('casting2').innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+                    <div class="avatar self-center">
+                        <div class="w-36 rounded-xl">
+                            <img
+                                src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
+                        </div>
+                    </div>
+                            <p class="text-lg font-bold mt-1">${item.name}</p>
+                            <p class="italic">${item.character}</p>
                 </div>`
                 }
             }
