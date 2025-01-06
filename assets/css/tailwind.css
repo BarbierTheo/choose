@@ -4280,6 +4280,10 @@ details.collapse summary::-webkit-details-marker {
   width: 8rem;
 }
 
+.w-8\/12 {
+  width: 66.666667%;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -4460,6 +4464,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .self-end {

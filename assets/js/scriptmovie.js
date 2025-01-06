@@ -39,10 +39,7 @@ function nFormatter(num, digits) {
 fetch("./assets/js/details.json")
     .then((reponse) => reponse.json())
     .then((details) => {
-
-        
-
-        const movieruntime = moment.duration(details.runtime, 'minutes');
+const movieruntime = moment.duration(details.runtime, 'minutes');
 
 
         document.getElementById('titlepage').innerText = `Choose - ${details.title}`
@@ -126,8 +123,8 @@ fetch("./assets/js/credits.json")
                                 src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
                         </div>
                     </div>
-                            <p class="text-lg font-bold mt-1">${item.name}</p>
-                            <p class="italic">${item.character}</p>
+                    <p class="text-lg font-bold mt-1">${item.name}</p>
+                    <p class="italic">${item.character}</p>
                 </div>`
 
                 }
@@ -139,8 +136,8 @@ fetch("./assets/js/credits.json")
                                 src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
                         </div>
                     </div>
-                            <p class="text-lg font-bold mt-1">${item.name}</p>
-                            <p class="italic">${item.character}</p>
+                    <p class="text-lg font-bold mt-1">${item.name}</p>
+                    <p class="italic">${item.character}</p>
                 </div>`
                 }
             }

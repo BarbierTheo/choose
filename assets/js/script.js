@@ -107,11 +107,19 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
       }
 
       document.getElementById(`card-affiche-section${sortiepage}`).innerHTML += `
+      <div class="flex flex-col">
             <a href="./movie.html?idMovie=${item.id}" class="flex flex-col mx-4 lg:m-0">
             <img src="https://image.tmdb.org/t/p/w500${item.poster_path}"
-              class="hover:shadow-sm flex rounded-lg self-center cursor-pointer lg:w-[17rem] duration-300 ease-in-out lg:h-[26rem]">
-              <p class="mt-1 font-bold text-lg lg:text-left text-center w-56 self-center lg:self-start">${item.title}</p>
-            <a>
+            class="hover:shadow-sm flex rounded-lg self-center cursor-pointer lg:w-[17rem] duration-300 ease-in-out lg:h-[26rem]"></a>
+            <div class="flex flex-row-reverse justify-center lg:justify-between">
+               <label for="my_modal_${i}" class=" mt-2 self-start cursor-pointer">
+                   <i class='bx bxs-info-circle text-white text-2xl'></i>
+               </label>
+               <div class="flex flex-col w-48 mt-2">
+                  <h3 class="text-lg text-white font-bold">${item.title}</h3>
+               </div>
+            </div>
+      </div>
     
           <input type="checkbox" id="my_modal_${i}" class="modal-toggle" />
           <div class="modal" role="dialog">
@@ -298,7 +306,7 @@ toggleaffiche4.addEventListener("click", showaffiche4)
 
 let a = 0;
 let cardpage = 0
-fetch("./assets/js/nextMovies.json")
+fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1&region=fr', options)
   .then((reponse) => reponse.json())
   .then((movies) => {
     for (item of movies["results"]) {
@@ -312,8 +320,8 @@ fetch("./assets/js/nextMovies.json")
 
       document.getElementById(`card-sorties-section${cardpage}`).innerHTML += `
         <div class="flex flex-col gap-1">
-      <img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
-      </img>
+      <a href="./movie.html?idMovie=${item.id}"><img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
+      </img></a>
       <div class="flex flex-row-reverse justify-between">
         <label for="my_modal_${a}" class="self-center cursor-pointer">
           <i class='bx bxs-info-circle text-white text-2xl'></i>
