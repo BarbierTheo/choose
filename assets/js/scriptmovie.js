@@ -65,7 +65,7 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?language=fr-FR`, options)
         document.getElementById('style').innerText = genre;
         document.getElementById('runtime').innerText = `${movieruntime.hours()} h ${movieruntime.minutes()} m`;
 
-        document.getElementById('vote').innerText = details.vote_average;
+        document.getElementById('vote').innerText = Math.round(details.vote_average)/2 + " / 5";
         document.getElementById('budget').innerText = nFormatter(details.budget) + " $";
 
         document.getElementById('tagline').innerText = details.tagline
