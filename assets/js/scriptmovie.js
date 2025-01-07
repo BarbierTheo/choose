@@ -36,7 +36,7 @@ function nFormatter(num, digits) {
 //   });
 
 let params = new URLSearchParams(document.location.search);
-let id = params.get("idMovie")
+let movieName = params.get("idMovie")
 
 
 const options = {
@@ -47,7 +47,7 @@ const options = {
     }
 };
 
-fetch(`https://api.themoviedb.org/3/movie/${id}?language=fr-FR`, options)
+fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((details) => {
         const movieruntime = moment.duration(details.runtime, 'minutes');
@@ -65,7 +65,7 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?language=fr-FR`, options)
         document.getElementById('style').innerText = genre;
         document.getElementById('runtime').innerText = `${movieruntime.hours()} h ${movieruntime.minutes()} m`;
 
-        document.getElementById('vote').innerText = Math.round(details.vote_average)/2 + " / 5";
+        document.getElementById('vote').innerText = Math.round(details.vote_average) / 2 + " / 5";
         document.getElementById('budget').innerText = nFormatter(details.budget) + " $";
 
         document.getElementById('tagline').innerText = details.tagline
@@ -109,13 +109,21 @@ fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options
                     genrejob = "Réalisateur"
                 }
                 i++
+
+
+
+                if (item.profile_path == null) { divcrew = `<div class="w-16 h-16 rounded-lg skeleton"></div>` }
+                else {
+                    divcrew = `<div class="w-16 h-16 rounded-lg">
+                    <img src="https://image.tmdb.org/t/p/original/${item.profile_path}" alt"">
+                    </div>`
+                }
+
                 if (i <= 4) {
                     document.getElementById('crew').innerHTML += `<div
                         class="flex bg-gray-300  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
                         <div class="avatar">
-                            <div class="w-16 h-16 rounded-lg">
-                            <img src="https://image.tmdb.org/t/p/original/${item.profile_path} alt"">
-                            </div>
+                           ${divcrew}
                         </div>
                         <p class="self-center ml-2">${genrejob} <span class="flex font-bold">${item.name}</span></p>
                     </div>`
@@ -135,17 +143,32 @@ fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options
                     console.log(5)
                 }
             }
+
+
             if (a <= 8) {
-                document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
-            <div class="avatar self-center">
-                <div class="w-36 rounded-xl">
-                    <img
-                        src="https://image.tmdb.org/t/p/original/${item.profile_path}" />
+
+                if (item.profile_path == null) {
+                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+                    <div class="avatar self-center">
+                         <div class="w-36 rounded-xl skeleton">
+                         </div>
+                    </div>
+                      <p class="text-lg font-bold mt-1">${item.name}</p>
+                      <p class="italic">${item.character}</p>
+                  </div>`
+                } else {
+                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+                <div class="avatar self-center">
+                     <div class="w-36 rounded-xl">
+                            <img src="${item.profile_path == null ? console.log('unkwn') : "https://image.tmdb.org/t/p/original/" + item.profile_path}" />
+                     </div>
                 </div>
-            </div>
             <p class="text-lg font-bold mt-1">${item.name}</p>
             <p class="italic">${item.character}</p>
-        </div>`   }
+        </div>`
+                }
+            }
+
         }
 
 
@@ -190,6 +213,5 @@ fetch(`https://api.themoviedb.org/3/movie/${id}/similar?language=fr-FR`, options
                 <img src="https://image.tmdb.org/t/p/w500${similar.results[s].poster_path}" alt="" class="w-[12rem] h-[15rem]">
                 <p class="text-slate-50 font-bold w-32 mt-2">${similar.results[s].title}</p>
             </div></a>`
-            console.log(similar.results[s])
-}
+        }
     })
