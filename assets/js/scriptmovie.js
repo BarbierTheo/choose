@@ -224,16 +224,20 @@ tocard2.addEventListener("click", showcard2)
 
 // tocard1.addEventListener("click", showcard1)
 
+let count = 0
+fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, options)
+    .then(res => res.json())
+    .then(similar => {
 
-// fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, options)
-//     .then(res => res.json())
-//     .then(similar => {
-
-//         similar.results.forEach(film => {
-//             document.getElementById('showsimilar').innerHTML += `
-//             <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
-//             <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" alt="" class="w-[12rem] h-[15rem]">
-//             <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
-//         </div></a>`
-//         console.log(58)
-//     })})
+        similar.results.forEach(film => {
+            count++
+            if(count<=6){
+            
+            document.getElementById('showsimilar').innerHTML += `
+            <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
+            <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" alt="" class="w-[12rem] h-[15rem]">
+            <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
+        </div></a>`
+     } else { return; }
+        console.log(58)
+    })})
