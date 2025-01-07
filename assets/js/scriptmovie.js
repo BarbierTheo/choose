@@ -175,6 +175,7 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, 
 
     })
 
+let ibutton = 1
 const tocard2 = document.getElementById("tocard2");
 function showcard2() {
     document.getElementById("casting1").classList.remove('flex')
@@ -183,25 +184,45 @@ function showcard2() {
     document.getElementById("casting2").classList.remove('hidden')
     document.getElementById("casting2").classList.add('flex')
 
-    document.getElementById("buttoncard2").classList.add('hidden')
-    document.getElementById("buttoncard1").classList.remove('hidden')
+    ibutton++
+    if ((ibutton % 2) == 0) {
+        document.getElementById("buttoncard2").classList.remove('rotate2')
+        document.getElementById("buttoncard2").classList.add('rotate1')
+
+        
+        document.getElementById("casting1").classList.remove('flex')
+        document.getElementById("casting1").classList.add('hidden')
+
+        document.getElementById("casting2").classList.remove('hidden')
+        document.getElementById("casting2").classList.add('flex')
+
+    } else {
+        document.getElementById("buttoncard2").classList.remove('rotate1')
+        document.getElementById("buttoncard2").classList.add('rotate2')
+
+        document.getElementById("casting1").classList.remove('hidden')
+        document.getElementById("casting1").classList.add('flex')
+
+        document.getElementById("casting2").classList.remove('flex')
+        document.getElementById("casting2").classList.add('hidden')
+    }
 }
 
 tocard2.addEventListener("click", showcard2)
 
-const tocard1 = document.getElementById("tocard1");
-function showcard1() {
-    document.getElementById("casting1").classList.remove('hidden')
-    document.getElementById("casting1").classList.add('flex')
+// const tocard1 = document.getElementById("tocard1");
+// function showcard1() {
+//     document.getElementById("casting1").classList.remove('hidden')
+//     document.getElementById("casting1").classList.add('flex')
 
-    document.getElementById("casting2").classList.remove('flex')
-    document.getElementById("casting2").classList.add('hidden')
+//     document.getElementById("casting2").classList.remove('flex')
+//     document.getElementById("casting2").classList.add('hidden')
 
-    document.getElementById("buttoncard1").classList.add('hidden')
-    document.getElementById("buttoncard2").classList.remove('hidden')
-}
+//     document.getElementById("buttoncard1").classList.add('hidden')
+//     document.getElementById("buttoncard2").classList.remove('hidden')
+// }
 
-tocard1.addEventListener("click", showcard1)
+// tocard1.addEventListener("click", showcard1)
 
 
 // fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, options)

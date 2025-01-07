@@ -6,3 +6,13 @@
     width: 23rem;
     max-width: 80%;
 }
+
+.rotate1 {
+    transform: rotate(180deg);
+    transition-duration: 0.5s;
+}
+
+.rotate2 {
+    transform: rotate(0deg);
+    transition-duration: 0.5s;
+}
