@@ -6,7 +6,8 @@ module.exports = {
     "./search.html",
     "./node_modules/flowbite/**/*.js",
     "./assets/js/script.js",
-    "./assets/js/scriptmovie.js"
+    "./assets/js/scriptmovie.js",
+    "./assets/js/search.js"
   ],
   theme: {
     extend: {},
