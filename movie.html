@@ -17,7 +17,8 @@
     <nav class="bg-base-200 shadow-sm fixed w-screen z-10">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500 hover:text-gray-50 ease-in-out duration-700">choose.</span>
+                <span
+                    class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500 hover:text-gray-50 ease-in-out duration-700">choose.</span>
             </a>
 
             <button data-collapse-toggle="navbar-solid-bg" type="button"
@@ -59,37 +60,51 @@
             <div class="self-center min-[1100px]:self-start" id="imgmovie"></div>
 
 
-            <div class="flex flex-col gap-2 container self-center px-4 lg:mx-0 text-gray-200">
+            <div class="flex flex-col gap-2 container self-start px-4 lg:mx-0 text-gray-200">
 
                 <div class="flex">
                     <h1 class="text-4xl font-bold" id="movietitle"></h1>
                     <p class="self-center text-4xl font-thin ml-4" id="year"></p>
                 </div>
                 <div class="flex gap-4">
-                    <p class="" id="release"></p>
-                    <p class="" id="style"></p>
-                    <p class="" id="runtime"></p>
+                    <p class="text-center" id="release"></p>
+                    -
+                    <p class="text-center" id="style"></p>
+                    -
+                    <p class="text-center" id="runtime"></p>
                 </div>
                 <div class="flex flex-col min-[1320px]:flex-row justify-between" id="popradial">
-                    <div class="flex flex-col py-4 gap-3 min-[1320px]:flex-row">
-                        <div class="flex bg-slate-800  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
+                    <div class="flex py-4 gap-3 justify-between lg:justify-center">
+
+                        <!-- <div class="flex bg-slate-800  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
                             <i class='bx bxs-hot self-center text-3xl'></i>
                             <div class="flex gap-1 self-center">
                                 <p class="font-semibold">Popularité :</p>
                                 <p id="vote"></p>
                             </div>
+                        </div> -->
 
-                        </div>
-
-                        <div class="flex bg-slate-800  rounded-xl px-8 py-2 gap-4 justify-start shadow-md">
+                        <div class="flex bg-slate-800  rounded-xl px-8 py-3 gap-4 self-center shadow-md">
                             <i class='bx bxs-bank self-center text-3xl'></i>
                             <div class="flex gap-1 self-center">
                                 <p class="font-semibold">Budget :</p>
                                 <p id="budget"></p>
                             </div>
                         </div>
+
+                        <div class="flex flex-col self-center ml-8">
+                            <div class="flex px-3 gap-2 justify-center lg:justify-start">
+                                <div class="flex gap-1 self-center text-xl font-bold align-middle">
+                                    <p id="vote"></p>
+                                </div>
+                                <i class='bx bxs-star self-center text-lg align-middle'></i>
+                            </div>
+                            <p class="text-sm font-light text-center" id="votecount"></p>
+                        </div>
                     </div>
+
                     <!-- <div class="radial-progress self-center text-red-600" style="--value:47;" role="progressbar"><p class="text-gray-100">oui</p></div> -->
+
                 </div>
 
                 <p class="italic text-lg font-semibold" id="tagline">
@@ -97,7 +112,6 @@
                 <p class="text-justify" id="synopsis"></p>
 
                 <div class="flex py-4 gap-4 flex-col lg:flex-row" id="crew">
-
                     <!-- <div
                         class="flex bg-gray-200  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
                         <div class="avatar">
@@ -107,33 +121,17 @@
                         </div>
                         <p class="self-center ml-2 font-light">Réalisatrice <span class="flex font-bold">Willy
                                 Wachosky</span></p>
-                    </div>
-                    <div
-                        class="flex bg-gray-200  rounded-xl px-3 py-3 pr-8 gap-4 justify-start shadow-md text-slate-800">
-                        <div class="avatar self-s">
-                            <div class="w-16 h-16 rounded-lg">
-                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                            </div>
-                        </div>
-                        <p class="self-center ml-2 font-light">Réalisatrice <span class="flex font-bold">Lana
-                                Wachosky</span></p>
                     </div> -->
-
-
                 </div>
-                <div class="glass px-2 lg:px-8 py-4 rounded-lg shadow-lg lg:max-w-[60vw] m-auto lg:ml-0">
 
-                    <p class="text-3xl font-semibold text-left m-0 ">Casting</p>
+                <div class="glass px-2 lg:px-8 py-4 rounded-lg shadow-lg lg:max-w-[60vw] m-auto lg:ml-0"
+                    id="containercasting">
+
+                    <p class="text-3xl font-semibold text-left m-0">Casting</p>
                     <div class="divider m-1"></div>
-
                     <div class="flex gap-4 lg:flex-row lg:flex-nowrap justify-center flex-wrap">
-
-                        <!-- <button
-                            class="self-center text-center bg-transparent rounded-full hover:text-orange-500 ease-in duration-100 hidden"
-                            id="buttoncard1"><i class='bx bx-left-arrow-alt text-5xl' id="tocard1"></i></button> -->
-
-                        <div class="flex p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap xl:flex-nowrap" id="casting1">
-
+                        <div class="flex p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap xl:flex-nowrap"
+                            id="casting1">
                             <!-- <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
                                 <div class="avatar">
                                     <div class="w-48 rounded-xl">
@@ -144,43 +142,22 @@
                                 <p class="text-lg font-bold mt-1">Keanu Reeves</p>
                                 <p class="italic leading-1">Neo</p>
                             </div> -->
-
-
                         </div>
-                        <div class="hidden p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap xl:flex-nowrap" id="casting2">
-
-                            <!-- <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
-                                <div class="avatar">
-                                    <div class="w-48 rounded-xl">
-                                        <img
-                                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                                    </div>
-                                </div>
-                                <p class="text-lg font-bold mt-1">Keanu Reeves</p>
-                                <p class="italic leading-1">Neo</p>
-                            </div> -->
-
-
-                        </div>
-
+                        <div class="hidden p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap xl:flex-nowrap"
+                            id="casting2"></div>
                         <button
                             class="self-center text-center bg-transparent rounded-full hover:text-orange-500 ease-in duration-100"
                             id="buttoncard2"><i class='bx bx-right-arrow-alt text-5xl' id="tocard2"></i></button>
                     </div>
-
                 </div>
-
-
 
             </div>
         </div>
     </section>
 
-
-
-<!-- SIMILAIRE -->
+    <!-- SIMILAIRE -->
     <div class="flex flex-col bg-slate-900 min-h-[30vh] mb-16 rounded-lg w-9/12 m-auto shadow-lg" id="similarmovie">
-        <p class="ml-8 lg:ml-12 mt-4 text-lg font-bold text-slate-50">Films similaires</p>
+        <p class="ml-8 lg:ml-12 mt-4 text-2xl font-bold text-slate-50">Films similaires</p>
         <div class="divider mx-8"></div>
         <div class="flex flex-wrap lg:flex-row justify-center m-auto" id="showsimilar">
 
@@ -189,15 +166,8 @@
                 <p class="text-black font-bold">Sonic</p>
             </div> -->
 
-
-
         </div>
-        
-
     </div>
-
-
-
 
     <!-- footer -->
 

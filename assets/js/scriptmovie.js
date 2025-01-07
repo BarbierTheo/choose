@@ -35,9 +35,13 @@ function nFormatter(num, digits) {
 //     console.log("nFormatter(%f, %i) = %s", test.num, test.digits, nFormatter(test.num, test.digits));
 //   });
 
+
+// Récupération des paramètres contenus dans l'URL 
+
 let params = new URLSearchParams(document.location.search);
 let movieName = params.get("idMovie")
 
+// Token TMDB
 
 const options = {
     method: 'GET',
@@ -46,6 +50,8 @@ const options = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDU1MjRlYzBhY2Y5NzZjNmFlMGI0YjM1NTk5ZTA3MiIsIm5iZiI6MTczNTgxOTY0Ny41OTEsInN1YiI6IjY3NzY4MTdmMTk0YjU4MTZkNzYxNTk0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vupVyDYfK3m2DfMLHAi2F4XKDSTxCy5FPrGDzwbqIZY'
     }
 };
+
+// Fetch des details du films
 
 fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
     .then((reponse) => reponse.json())
@@ -65,7 +71,8 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
         document.getElementById('style').innerText = genre;
         document.getElementById('runtime').innerText = `${movieruntime.hours()} h ${movieruntime.minutes()} m`;
 
-        document.getElementById('vote').innerText = Math.round(details.vote_average) / 2 + " / 5";
+        document.getElementById('vote').innerText = Math.round(details.vote_average) / 2;
+        document.getElementById('votecount').innerText = (details.vote_count) + " avis";
         document.getElementById('budget').innerText = nFormatter(details.budget) + " $";
 
         document.getElementById('tagline').innerText = details.tagline
@@ -96,9 +103,13 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
 
     })
 
+// Fetch des crédits du film
+
 fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((credits) => {
+
+        // Réalisateur
         let i = 0
         for (item of credits.crew) {
             if (item.job == "Director") {
@@ -131,49 +142,58 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, 
             }
         }
 
-        let a = 0
-        for (item of credits.cast) {
-            a++
-            if (a <= 8) {
-                if (a <= 4) {
-                    incr = 1
+        // Casting
+
+        console.log(credits.cast.length)
+        if (credits.cast.length != 0) {
+            let a = 0
+            for (item of credits.cast) {
+                a++
+                if (a <= 8) {
+                    if (a <= 4) {
+                        incr = 1
+                    }
+                    else {
+                        incr = 2
+                        console.log(5)
+                    }
                 }
-                else {
-                    incr = 2
-                    console.log(5)
-                }
-            }
 
+                console.log(credits.cast.item)
+                if (a <= 8) {
 
-            if (a <= 8) {
-
-                if (item.profile_path == null) {
-                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
+                    if (item.profile_path == null) {
+                        document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
                     <div class="avatar self-center">
                          <div class="w-36 rounded-xl skeleton">
                          </div>
                     </div>
-                      <p class="text-lg font-bold mt-1">${item.name}</p>
-                      <p class="italic">${item.character}</p>
+                      <p class="font-bold mt-1 w-36">${item.name}</p>
+                      <p class="italic w-36">${item.character}</p>
                   </div>`
-                } else {
-                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
+                    } else {
+                        document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
                 <div class="avatar self-center">
                      <div class="w-36 rounded-xl">
                             <img src="${item.profile_path == null ? console.log('unkwn') : "https://image.tmdb.org/t/p/original/" + item.profile_path}" />
                      </div>
                 </div>
-            <p class="text-lg font-bold mt-1">${item.name}</p>
-            <p class="italic">${item.character}</p>
+            <p class="font-bold mt-1 w-36 leading-1">${item.name}</p>
+            <p class="italic w-36 leading-1">${item.character}</p>
         </div>`
+                    }
                 }
-            }
 
+            }
+        } else {
+            document.getElementById("containercasting").classList.add('hidden')
         }
 
 
 
     })
+
+// Bouton pour dérouler la card 
 
 let ibutton = 1
 const tocard2 = document.getElementById("tocard2");
@@ -189,7 +209,7 @@ function showcard2() {
         document.getElementById("buttoncard2").classList.remove('rotate2')
         document.getElementById("buttoncard2").classList.add('rotate1')
 
-        
+
         document.getElementById("casting1").classList.remove('flex')
         document.getElementById("casting1").classList.add('hidden')
 
@@ -210,19 +230,7 @@ function showcard2() {
 
 tocard2.addEventListener("click", showcard2)
 
-// const tocard1 = document.getElementById("tocard1");
-// function showcard1() {
-//     document.getElementById("casting1").classList.remove('hidden')
-//     document.getElementById("casting1").classList.add('flex')
-
-//     document.getElementById("casting2").classList.remove('flex')
-//     document.getElementById("casting2").classList.add('hidden')
-
-//     document.getElementById("buttoncard1").classList.add('hidden')
-//     document.getElementById("buttoncard2").classList.remove('hidden')
-// }
-
-// tocard1.addEventListener("click", showcard1)
+// Films similaires
 
 let count = 0
 fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, options)
@@ -231,13 +239,14 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, 
 
         similar.results.forEach(film => {
             count++
-            if(count<=6){
-            
-            document.getElementById('showsimilar').innerHTML += `
+            if (count <= 6) {
+
+                document.getElementById('showsimilar').innerHTML += `
             <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
-            <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" alt="" class="w-[12rem] h-[15rem]">
+            <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" alt="" class="w-[12rem] h-[18rem]">
             <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
         </div></a>`
-     } else { return; }
-        console.log(58)
-    })})
+            } else { return; }
+            console.log(58)
+        })
+    })
