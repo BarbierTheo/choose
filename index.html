@@ -20,7 +20,8 @@
   <nav class="bg-base-200 shadow-sm fixed w-screen z-10">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500 hover:text-gray-50 ease-in-out duration-700">choose.</span>
+        <span
+          class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500 hover:text-gray-50 ease-in-out duration-700">choose.</span>
       </a>
 
       <button data-collapse-toggle="navbar-solid-bg" type="button"
@@ -36,7 +37,8 @@
         <ul
           class="flex flex-col font-medium mt-4 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-gray-800  border-gray-700">
           <li>
-            <a href="#affiche" class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300" 
+            <a href="#affiche"
+              class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300"
               aria-current="page">A l'affiche</a>
           </li>
           <li>
@@ -45,8 +47,9 @@
               sorties</a>
           </li>
           <li>
-            <a href="#search"
-              class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300">Rechercher un film
+            <a href="./search.html"
+              class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300">Rechercher
+              un film
             </a>
           </li>
         </ul>
@@ -88,11 +91,14 @@
           forger un avis.
         </p>
         <div class="flex flex-row lg:w-full justify-center lg:justify-start gap-2">
-          <a href="#affiche" class="btn bg-orange-500 text-white hover:bg-orange-600 self-center ease-in-out duration-300">A l'affiche</a>
+          <a href="#affiche"
+            class="btn bg-orange-500 text-white hover:bg-orange-600 self-center ease-in-out duration-300">A
+            l'affiche</a>
           <a href="#sorties"
             class="btn bg-orange-100 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-orange-100 hover:border-orange-100 self-center ease-in-out duration-300">Prochaines
             sorties</a>
-          <a href="#search" class="btn bg-orange-500 text-white hover:bg-orange-600 self-center text-xl ease-in-out duration-300"><i
+          <a href="#search"
+            class="btn bg-orange-500 text-white hover:bg-orange-600 self-center text-xl ease-in-out duration-300"><i
               class='bx bx-search-alt' style='color:#ffffff'></i></a>
         </div>
       </div>
@@ -211,7 +217,7 @@
     <section class="hidden justify-around flex-row gap-2 lg:gap-8 min-h-[110vh] flex-wrap m-auto p-0 w-11/12"
       id="card-sorties-section2">
     </section>
-   <!-- CARD -->
+    <!-- CARD -->
 
     <!-- <div class="flex flex-col gap-1">
       <img class="size-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
@@ -268,7 +274,7 @@
         <input type="text" class="grow border-none" placeholder="ex: Le Parrain 2" />
       </label>
 
-      <select class="select lg:w-2/12 max-w-xs">
+      <select class="select lg:w-2/12">
         <option disabled selected class="text-slate-300">Choisissez un genre</option>
         <option class="text-slate-100">Science-fiction</option>
         <option class="text-slate-100">Drame</option>
@@ -278,15 +284,30 @@
       </select>
 
       <a href="" class="btn btn-neutral"><i class='bx bx-search text-lg'></i></a>
-
     </div>
-    <section class="flex justify-around flex-col lg:flex-row gap-12 lg:gap-0 min-h-[70vh] flex-wrap m-auto p-2"
+
+    <div class="flex flex-wrap min-h-[5vh] mx-9 my-3 gap-2 justify-start">
+      <p class="p-3 bg-slate-200 text-slate-800 rounded-lg shadow-md">Science-fiction <a href=""><i
+            class='bx bx-plus rotate-45 self-center ml-2'></i></a></p>
+      <p class="p-3 bg-slate-200 text-slate-800 rounded-lg shadow-md">Science-fiction <a href=""><i
+            class='bx bx-plus rotate-45 self-center ml-2'></i></a></p>
+      <p class="p-3 bg-slate-200 text-slate-800 rounded-lg shadow-md">Science-fiction <a href=""><i
+            class='bx bx-plus rotate-45 self-center ml-2'></i></a></p>
+    </div>
+
+
+    <section class="flex justify-start flex-col md:flex-row gap-12 lg:gap-6 min-h-[70vh] flex-wrap p-2 mx-6"
       id="card-affiche-section">
 
-      <a href="#" class="flex flex-col gap-1">
-        <img src="./assets/img/watching-a-3d-movie-1950s-v0-ax7ggsjzw8yb1.webp" class="w-[12rem] h-[15rem]" alt="">
-        <p class="text-lg font-bold">Sonic</p>
+      <a href="#" class="flex flex-col gap-1 h-fit">
+        <img src="./assets/img/watching-a-3d-movie-1950s-v0-ax7ggsjzw8yb1.webp" class="w-[10rem] lg:w-[14rem] h-[12rem] lg:h-[17rem] rounded-lg"
+          alt="">
+          <div class="flex justify-between">
+            <p class="lg:text-lg font-bold">Sonic</p>
+            <i class='bx bx-dots-horizontal-rounded self-center text-2xl'></i>
+          </div>
       </a>
+      
 
 
     </section>

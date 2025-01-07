@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose - Recherche</title>
+    <!-- npx tailwindcss -i ./assets/css/dist.css -o ./assets/css/tailwind.css --watch -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="bg-base-300">
+
+    <nav class="bg-base-200 shadow-sm fixed w-screen z-10">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span
+                    class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500 hover:text-gray-50 ease-in-out duration-700">choose.</span>
+            </a>
+
+            <button data-collapse-toggle="navbar-solid-bg" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+                aria-controls="navbar-solid-bg" aria-expanded="false">
+                <span class="sr-only">Ouvrir le menu principal</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+                <ul
+                    class="flex flex-col font-medium mt-4 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-gray-800  border-gray-700">
+                    <li>
+                        <a href="./index.html#affiche"
+                            class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300"
+                            aria-current="page">A l'affiche</a>
+                    </li>
+                    <li>
+                        <a href="./index.html#sorties"
+                            class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300">Prochaines
+                            sorties</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 md:p-0 text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300">Rechercher
+                            un film
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-24 mb-16">
+        <div class="container mx-auto bg-gray-600/50 rounded-lg shadow-lg min-h-[100vh]">
+            <div class="flex flex-row mx-2">
+                <h2 class="mx-8 mt-8 text-center text-4xl font-bold text-slate-100" id="search">Rechercher un film</h2>
+            </div>
+            <div class="divider my-2 mx-8"></div>
+
+            <div class="flex flex-col lg:flex-row justify-between mx-8 gap-2">
+
+                <label class="input input-bordered flex items-center gap-2 lg:w-screen">
+                    <input type="text" class="grow border-none" placeholder="ex: Le Parrain 2" />
+                </label>
+
+                <select class="select lg:w-2/12">
+                    <option disabled selected class="text-slate-300">Choisissez un genre</option>
+                    <option class="text-slate-100">Science-fiction</option>
+                    <option class="text-slate-100">Drame</option>
+                    <option class="text-slate-100">Romance</option>
+                    <option class="text-slate-100">Action</option>
+                    <option class="text-slate-100">Horreur</option>
+                </select>
+
+                <a href="" class="btn btn-neutral"><i class='bx bx-search text-lg'></i></a>
+            </div>
+
+            <div class="flex flex-wrap min-h-[5vh] mx-9 my-3 gap-2 lg:justify-start justify-center">
+                <p class="p-3 bg-slate-200 text-slate-800 rounded-lg shadow-md">Science-fiction <a href=""><i
+                            class='bx bx-plus rotate-45 self-center ml-2'></i></a></p>
+                <p class="p-3 bg-slate-200 text-slate-800 rounded-lg shadow-md">Science-fiction <a href=""><i
+                            class='bx bx-plus rotate-45 self-center ml-2'></i></a></p>
+                <p class="p-3 bg-slate-200 text-slate-800 rounded-lg shadow-md">Science-fiction <a href=""><i
+                            class='bx bx-plus rotate-45 self-center ml-2'></i></a></p>
+
+            </div>
+
+            <section class="flex justify-center md:justify-start flex-row gap-12 lg:gap-6 min-h-[70vh] flex-wrap p-2 mx-6"
+                id="card-affiche-section">
+
+                <a href="#" class="flex flex-col gap-1 h-fit">
+                    <img src="./assets/img/watching-a-3d-movie-1950s-v0-ax7ggsjzw8yb1.webp"
+                        class="w-[14rem] h-[17rem] rounded-lg" alt="">
+                    <div class="flex justify-between">
+                        <p class="lg:text-lg font-bold">Sonic</p>
+                        <i class='bx bx-dots-horizontal-rounded self-center text-2xl'></i>
+                    </div>
+                </a>
+
+                
+
+                
+
+            </section>
+        </div>
+    </div>
+
+    <footer class="bg-base-200">
+        <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+            <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
+                <a class="inline-block rounded-full bg-orange-500 p-2 text-white shadow transition hover:bg-orange-600 sm:p-3 lg:p-4"
+                    href="#">
+                    <span class="sr-only">Retour en haut du site</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="lg:flex lg:items-end lg:justify-between">
+                <div>
+                    <div class="flex justify-center lg:justify-start">
+                        <p class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</p>
+                    </div>
+
+                    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-slate-500 lg:text-left">
+                        Explorez une sélection de films sans qu’aucun algorithme ne
+                        dicte vos choix. Ici, c’est votre intuition et vos envies qui décident, sans influence
+                        extérieure
+                    </p>
+                </div>
+
+                <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+                    <li>
+                        <a class="text-slate-400 transition hover:text-gray-700/75" href="#">A propos</a>
+                    </li>
+
+                    <li>
+                        <a class="text-slate-400 transition hover:text-gray-700/75" href="#">Mentions légales</a>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
+                Copyright &copy; 2025. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./assets/js/lib/moment.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"
+        integrity="sha512-hUhvpC5f8cgc04OZb55j0KNGh4eh7dLxd/dPSJ5VyzqDWxsayYbojWyl5Tkcgrmb/RVKCRJI1jNlRbVP4WWC4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
