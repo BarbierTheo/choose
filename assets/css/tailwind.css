@@ -4191,6 +4191,10 @@ details.collapse summary::-webkit-details-marker {
   height: fit-content;
 }
 
+.h-\[15rem\] {
+  height: 15rem;
+}
+
 .min-h-\[110vh\] {
   min-height: 110vh;
 }
@@ -4227,6 +4231,10 @@ details.collapse summary::-webkit-details-marker {
   width: 4rem;
 }
 
+.w-36 {
+  width: 9rem;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -4241,10 +4249,6 @@ details.collapse summary::-webkit-details-marker {
 
 .w-5\/12 {
   width: 41.666667%;
-}
-
-.w-56 {
-  width: 14rem;
 }
 
 .w-64 {
@@ -4272,16 +4276,12 @@ details.collapse summary::-webkit-details-marker {
   width: 100vw;
 }
 
-.w-36 {
-  width: 9rem;
+.w-\[10rem\] {
+  width: 10rem;
 }
 
-.w-32 {
-  width: 8rem;
-}
-
-.w-8\/12 {
-  width: 66.666667%;
+.w-\[12rem\] {
+  width: 12rem;
 }
 
 .max-w-3xl {
@@ -4777,10 +4777,6 @@ details.collapse summary::-webkit-details-marker {
 
 .text-justify {
   text-align: justify;
-}
-
-.align-middle {
-  vertical-align: middle;
 }
 
 .text-2xl {
@@ -5510,10 +5506,6 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:gap-8 {
     gap: 2rem;
-  }
-
-  .lg\:self-start {
-    align-self: flex-start;
   }
 
   .lg\:rounded-2xl {
