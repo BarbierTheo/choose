@@ -300,6 +300,37 @@ toggleaffiche4.addEventListener("click", showaffiche4)
 
 
 
+// BUTTON WEEK PROCHAINES SORTIES
+ 
+const toggleweek1 = document.getElementById("thisweek_btn");
+function showweek1(){
+document.getElementById("thisweek_btn").classList.add("btn-active")
+document.getElementById("nextweek_btn").classList.remove("btn-active")
+document.getElementById("allweek_btn").classList.remove("btn-active")
+
+}
+toggleweek1.addEventListener("click", showweek1)
+
+const toggleweek2 = document.getElementById("nextweek_btn");
+function showweek2(){
+document.getElementById("thisweek_btn").classList.remove("btn-active")
+document.getElementById("nextweek_btn").classList.add("btn-active")
+document.getElementById("allweek_btn").classList.remove("btn-active")
+
+}
+toggleweek2.addEventListener("click", showweek2)
+
+const toggleweek3 = document.getElementById("allweek_btn");
+function showweek3(){
+document.getElementById("thisweek_btn").classList.remove("btn-active")
+document.getElementById("nextweek_btn").classList.remove("btn-active")
+document.getElementById("allweek_btn").classList.add("btn-active")
+
+}
+toggleweek3.addEventListener("click", showweek3)
+
+
+
 
 
 // AFFICHAGE DES CARTES PROCHAINES SORTIES
@@ -350,8 +381,7 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1&region=
       <label class="modal-backdrop" for="my_modal_${a}">Fermer</label>
     </div>
         `
-
-    }
+      }
 
     // PAGINATION BTN 1 SORTIES
 
