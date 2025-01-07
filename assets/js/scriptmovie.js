@@ -96,7 +96,7 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
 
     })
 
-fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options)
+fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((credits) => {
         let i = 0
@@ -148,7 +148,7 @@ fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options
             if (a <= 8) {
 
                 if (item.profile_path == null) {
-                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
                     <div class="avatar self-center">
                          <div class="w-36 rounded-xl skeleton">
                          </div>
@@ -157,7 +157,7 @@ fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options
                       <p class="italic">${item.character}</p>
                   </div>`
                 } else {
-                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+                    document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
                 <div class="avatar self-center">
                      <div class="w-36 rounded-xl">
                             <img src="${item.profile_path == null ? console.log('unkwn') : "https://image.tmdb.org/t/p/original/" + item.profile_path}" />
@@ -204,14 +204,15 @@ function showcard1() {
 tocard1.addEventListener("click", showcard1)
 
 
-fetch(`https://api.themoviedb.org/3/movie/${id}/similar?language=fr-FR`, options)
-    .then(res => res.json())
-    .then(similar => {
+// fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, options)
+//     .then(res => res.json())
+//     .then(similar => {
 
-        for (s = 0; s <= 4; s++) {
-            document.getElementById('showsimilar').innerHTML += `<a href="./movie.html?idMovie=${similar.results[s].id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
-                <img src="https://image.tmdb.org/t/p/w500${similar.results[s].poster_path}" alt="" class="w-[12rem] h-[15rem]">
-                <p class="text-slate-50 font-bold w-32 mt-2">${similar.results[s].title}</p>
-            </div></a>`
-        }
-    })
+//         similar.results.forEach(film => {
+//             document.getElementById('showsimilar').innerHTML += `
+//             <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
+//             <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" alt="" class="w-[12rem] h-[15rem]">
+//             <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
+//         </div></a>`
+//         console.log(58)
+//     })})

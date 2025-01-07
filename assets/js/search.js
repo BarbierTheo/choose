@@ -17,7 +17,7 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=${movieName}&include_adul
                     document.getElementById("card-similar-section").innerHTML += `
                     <a href="./movie.html?idMovie=${film.id}" class="flex flex-col gap-1 h-fit">
                     <img src="https://image.tmdb.org/t/p/w500${film.poster_path}"
-                    class="w-[14rem] h-[17rem] rounded-lg" alt="">
+                    class="w-[14rem] h-[18rem] rounded-lg" alt="">
                     <div class="flex justify-between">
                     <p class="lg:text-lg font-bold w-32">${film.title}</p>
                     <i class='bx bxs-info-circle self-center text-white text-2xl'></i>
@@ -25,12 +25,5 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=${movieName}&include_adul
                     </a>`
            
             })
-            
-        
         })
-    
-        
-
-
-
     }
