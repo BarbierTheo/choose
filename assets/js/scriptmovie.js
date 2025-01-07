@@ -42,12 +42,12 @@ let id = params.get("idMovie")
 const options = {
     method: 'GET',
     headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDU1MjRlYzBhY2Y5NzZjNmFlMGI0YjM1NTk5ZTA3MiIsIm5iZiI6MTczNTgxOTY0Ny41OTEsInN1YiI6IjY3NzY4MTdmMTk0YjU4MTZkNzYxNTk0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vupVyDYfK3m2DfMLHAi2F4XKDSTxCy5FPrGDzwbqIZY'
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDU1MjRlYzBhY2Y5NzZjNmFlMGI0YjM1NTk5ZTA3MiIsIm5iZiI6MTczNTgxOTY0Ny41OTEsInN1YiI6IjY3NzY4MTdmMTk0YjU4MTZkNzYxNTk0ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vupVyDYfK3m2DfMLHAi2F4XKDSTxCy5FPrGDzwbqIZY'
     }
-  };
-  
-  fetch(`https://api.themoviedb.org/3/movie/${id}?language=fr-FR`, options)
+};
+
+fetch(`https://api.themoviedb.org/3/movie/${id}?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((details) => {
         const movieruntime = moment.duration(details.runtime, 'minutes');
@@ -89,14 +89,14 @@ const options = {
         }
 
         let valueradial = details.vote_average * 10
-        
 
-        document.getElementById('popradial').innerHTML += `<div class="radial-progress self-center ${colorradial}" style="--value:${valueradial};" role="progressbar">${iconradial}</div>`
+
+        document.getElementById('popradial').innerHTML += `<div class="radial-progress self-center ${colorradial} my-3" style="--value:${valueradial};" role="progressbar">${iconradial}</div>`
 
 
     })
 
-    fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options)
+fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((credits) => {
         let i = 0
@@ -128,7 +128,7 @@ const options = {
             a++
             if (a <= 8) {
                 if (a <= 4) {
-                incr = 1
+                    incr = 1
                 }
                 else {
                     incr = 2
@@ -136,7 +136,7 @@ const options = {
                 }
             }
             if (a <= 8) {
-            document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
+                document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center"">
             <div class="avatar self-center">
                 <div class="w-36 rounded-xl">
                     <img
@@ -149,7 +149,7 @@ const options = {
         }
 
 
-        
+
     })
 
 const tocard2 = document.getElementById("tocard2");
@@ -179,3 +179,17 @@ function showcard1() {
 }
 
 tocard1.addEventListener("click", showcard1)
+
+
+fetch(`https://api.themoviedb.org/3/movie/${id}/similar?language=fr-FR`, options)
+    .then(res => res.json())
+    .then(similar => {
+
+        for (s = 0; s <= 4; s++) {
+            document.getElementById('showsimilar').innerHTML += `<a href="./movie.html?idMovie=${similar.results[s].id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
+                <img src="https://image.tmdb.org/t/p/w500${similar.results[s].poster_path}" alt="" class="w-[12rem] h-[15rem]">
+                <p class="text-slate-50 font-bold w-32 mt-2">${similar.results[s].title}</p>
+            </div></a>`
+            console.log(similar.results[s])
+}
+    })
