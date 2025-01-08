@@ -15,6 +15,20 @@ function nFormatter(num, digits) {
     return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(item.symbol) : "0";
 }
 
+let darkCount = 1
+
+function darkMode () {
+  darkCount++
+  console.log(darkCount)
+  if (darkCount%2 == 0) {
+    document.getElementById('darkmodehtml').classList.remove('dark')
+  }
+  else {
+    document.getElementById('darkmodehtml').classList.add('dark')
+  }
+}
+document.getElementById('darkmodetoggle').addEventListener("click", darkMode)
+
 /*
  * Tests
  */
