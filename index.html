@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth dark" id="darkmodehtml">
 
 <head>
   <meta charset="UTF-8">
@@ -13,16 +13,27 @@
 
 </head>
 
-<body class="bg-base-300">
+<body class="bg-[#e5e6e6] dark:bg-[#15191e]">
+
+  <!-- 15191e dark mode = bg-base-300 -->
+  <!-- 191e24 dark mode = bg-base-200 -->
+
+  <!-- bg-base-300 : bg-[#e5e6e6] dark:bg-[#15191e]
+bg-base-200 : bg-[#f2f2f2] dark:bg-[#191e24] -->
+
+  <!-- e5e6e6 white mode = bg-base-300 -->
+  <!-- f2f2f2 white mode = bg-base-200 -->
 
   <!-- NAV -->
 
-  <nav class="bg-base-200 shadow-sm fixed w-screen z-10">
+  <nav class="bg-[#f2f2f2] dark:bg-[#191e24] shadow-sm fixed w-screen z-10">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <span
           class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500 hover:text-gray-50 ease-in-out duration-700">choose.</span>
       </a>
+
+      <!-- HAMBURGER MENU -->
       <button data-collapse-toggle="navbar-solid-bg" type="button"
         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
         aria-controls="navbar-solid-bg" aria-expanded="false">
@@ -33,8 +44,9 @@
         </svg>
       </button>
       <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+
         <ul
-          class="flex flex-col font-medium mt-4 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-gray-800  border-gray-700">
+          class="flex flex-col font-medium mt-4 mr-4 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-gray-800  border-gray-700">
           <li>
             <a href="#affiche"
               class="block py-2 px-3 md:p-0 text-slate-950 dark:text-white  rounded bg-transparent hover:text-orange-400 ease-in-out duration-300"
@@ -83,6 +95,7 @@
           vous
           forger un avis.
         </p>
+
         <div class="flex flex-row lg:w-full justify-center lg:justify-start gap-2">
           <a href="#affiche"
             class="btn bg-orange-500 text-white hover:bg-orange-600 self-center ease-in-out duration-300">A
@@ -99,9 +112,9 @@
   </div>
 
   <!-- CE SOIR -->
-  <div class="h-[10vh] bg-base-200 flex justify-center max-[1080px]:hidden shadow-2xl">
-    <h2 id="tonight" class="text-slate-950 dark:text-white self-center font-semibold text-4xl">Ce soir c'est plutôt <span
-        class="text-orange-500 typewriter">science-fiction</span> ?</h2>
+  <div class="h-[10vh] bg-[#f2f2f2] dark:bg-[#191e24] flex justify-center max-[1080px]:hidden shadow-md">
+    <h2 id="tonight" class="text-slate-950 dark:text-white self-center font-semibold text-4xl">Ce soir c'est plutôt
+      <span class="text-orange-500 typewriter">science-fiction</span> ?</h2>
   </div>
 
   <div class="mt-16 container mx-auto min-h-[70vh]">
@@ -159,7 +172,7 @@
 
   <!-- TRANSITION -->
 
-  <div class="h-[70vh] bg-base-200  flex flex-col lg:flex-row justify-center mt-32 shadow-xl">
+  <div class="h-[70vh]   bg-[#f2f2f2] dark:bg-[#191e24]  flex flex-col lg:flex-row justify-center mt-32 shadow-md">
     <div
       class="text-slate-950 dark:text-white flex flex-col justify-center gap-12 w-5/12 max-[1100px]:text-center max-[1100px]:w-11/12 max-[1100px]:m-auto">
       <div class="">
@@ -188,7 +201,8 @@
 
   <div class="my-14 container mx-auto">
     <div class="flex md:flex-row flex-col justify-between my-2 mx-2 g">
-      <h2 class="m-0 text-center text-4xl font-bold text-slate-950 dark:text-white " id="sorties">Prochaines sorties</h2>
+      <h2 class="m-0 text-center text-4xl font-bold text-slate-950 dark:text-white " id="sorties">Prochaines sorties
+      </h2>
       <div class="flex flex-col lg:flex-row gap-3 my-8 lg:my-0 w-fit self-center">
         <button class="btn btn-active btn-outline" id="thisweek_btn">Cette semaine</button>
         <button class="btn btn-outline" id="nextweek_btn">Semaine prochaine</button>
@@ -245,7 +259,7 @@
 
   <!-- footer -->
 
-  <footer class="bg-base-200">
+  <footer class="bg-[#f2f2f2] dark:bg-[#191e24]">
     <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
       <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
         <a class="inline-block rounded-full bg-orange-500 p-2 text-white shadow transition hover:bg-orange-600 sm:p-3 lg:p-4"
@@ -262,8 +276,19 @@
 
       <div class="lg:flex lg:items-end lg:justify-between">
         <div>
-          <div class="flex justify-center lg:justify-start">
+          <div class="flex justify-center lg:justify-between">
             <p class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</p>
+            
+            <div class="flex flex-col self-center">
+              <p class="text-sm self-center mb-2">dark</p>
+            <input
+            type="checkbox"
+            value="synthwave"
+            class="toggle theme-controller col-span-2 col-start-1 row-start-1 border-slate-400 bg-slate-100" id="darkmodetoggle" />
+            <p class="text-sm self-center mt-2">light</p>
+          </div>
+
+
           </div>
 
           <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-slate-500 lg:text-left">

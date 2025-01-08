@@ -1,15 +1,19 @@
 moment.locale('fr')
 
 
+let darkCount = 1
 
-
-// UNIQUEMENT POUR L'ESSAI
-fetch("./assets/js/details.json")
-  .then((reponse) => reponse.json())
-  .then((details) => {
-    document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack0"><img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class="rounded-lg"></a>`;
-  })
-
+function darkMode () {
+  darkCount++
+  console.log(darkCount)
+  if (darkCount%2 == 0) {
+    document.getElementById('darkmodehtml').classList.remove('dark')
+  }
+  else {
+    document.getElementById('darkmodehtml').classList.add('dark')
+  }
+}
+document.getElementById('darkmodetoggle').addEventListener("click", darkMode)
 
 
 // CHATGPT TRANSITION
