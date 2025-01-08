@@ -77,11 +77,6 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
   .then((movies) => {
 
 
-    // STACK HERO HEADER
-    // for (let stackrandom = 0; stackrandom <= 2; stackrandom++) {
-    //   document.getElementById('stackhero').innerHTML += `<a href="./movie.html" id="stack1"><img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="poster_${details.title}" class="rounded-lg"></a>`;
-    // }
-
 
     // CARDS FILMS A L'AFFICHE
     let sortiepage = 0
@@ -94,7 +89,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
       // ONLY FOR STARTING
 
       if (i <= 3) {
-        document.getElementById('stackhero').innerHTML += `<a href="./movie.html?idMovie=${item.id}" id="stack${i}"><img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="poster_${item.title}" class="rounded-lg"></a>`;
+        document.getElementById('stackhero').innerHTML += `<a href="./movie.html?idMovie=${item.id}" id="stack${i}" class="self-center"><img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="poster_${item.title}" class="rounded-lg min-w-[20rem]"></a>`;
       }
 
       // ONLY FOR STARTING
@@ -110,20 +105,34 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
         sortiepage = 4
       }
 
+
+    //   <div class="flex flex-col gap-1">
+    //   <a href="./movie.html?idMovie=${item.id}"><img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
+    //   </img></a>
+    //   <div class="flex flex-row-reverse justify-between">
+    //     <label for="my_modal_${a}" class="self-center cursor-pointer">
+    //       <i class='bx bxs-info-circle text-slate-950 dark:text-white text-2xl'></i>
+    //     </label>
+    //     <div class="flex flex-col w-48">
+    //       <h3 class="text-lg text-slate-950 dark:text-white font-bold">${item.title}</h3>
+    //       <p class="text-slate-800 dark:text-white">${moment(item.release_date).format('L')}</p>
+    //     </div>
+    //   </div>
+    // </div>
+
       document.getElementById(`card-affiche-section${sortiepage}`).innerHTML += `
-      <div class="flex flex-col">
-            <a href="./movie.html?idMovie=${item.id}" class="flex flex-col mx-4 lg:m-0">
-            <img src="https://image.tmdb.org/t/p/w500${item.poster_path}"
-            class="hover:shadow-sm flex rounded-lg self-center cursor-pointer lg:w-[17rem] duration-300 ease-in-out lg:h-[26rem]"></a>
-            <div class="flex flex-row-reverse justify-center lg:justify-between">
-               <label for="my_modal_${i}" class=" mt-2 self-start cursor-pointer">
-                   <i class='bx bxs-info-circle text-slate-950 dark:text-white text-2xl'></i>
-               </label>
-               <div class="flex flex-col w-48 mt-2">
-                  <h3 class="text-lg text-slate-950 dark:text-white font-bold">${item.title}</h3>
-               </div>
+          <div class="flex flex-col gap-2 self-center lg:self-start">
+            <a href="./movie.html?idMovie=${item.id}"><img class="w-56 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
+            </img></a>
+            <div class="flex flex-row-reverse justify-between">
+              <label for="my_modal_${i}" class="self-center cursor-pointer">
+                <i class='bx bxs-info-circle text-slate-950 dark:text-white text-2xl'></i>
+              </label>
+              <div class="flex flex-col w-48">
+                <h3 class="text-lg text-slate-950 dark:text-white font-bold">${item.title}</h3>
+              </div>
             </div>
-      </div>
+          </div>
     
           <input type="checkbox" id="my_modal_${i}" class="modal-toggle" />
           <div class="modal" role="dialog">

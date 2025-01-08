@@ -73,7 +73,7 @@ bg-base-200 : bg-[#f2f2f2] dark:bg-[#191e24] -->
   <div class="hero min-h-screen">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div class="flex flex-col lg:w-6/12 w-7/12 my-16 lg:my-0">
-        <div class="stack min-h-[80vh]" id="stackhero">
+        <div class="stack min-h-[80vh] self-center" id="stackhero">
           <!--           
           <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" class="rounded-lg">
           <img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" class="rounded-lg">
@@ -114,25 +114,26 @@ bg-base-200 : bg-[#f2f2f2] dark:bg-[#191e24] -->
   <!-- CE SOIR -->
   <div class="h-[10vh] bg-[#f2f2f2] dark:bg-[#191e24] flex justify-center max-[1080px]:hidden shadow-md">
     <h2 id="tonight" class="text-slate-950 dark:text-white self-center font-semibold text-4xl">Ce soir c'est plutôt
-      <span class="text-orange-500 typewriter">science-fiction</span> ?</h2>
+      <span class="text-orange-500 typewriter">science-fiction</span> ?
+    </h2>
   </div>
 
-  <div class="mt-16 container mx-auto min-h-[70vh]">
+  <div class="mt-16 container mx-auto min-h-[60vh]">
     <div class="flex flex-row my-2 mx-2">
       <h2 class="m-0 text-center text-4xl font-bold text-slate-950 dark:text-white " id="affiche">A l'affiche</h2>
     </div>
 
     <div class="divider"></div>
-    <section class="flex justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+    <section class="flex justify-around flex-col lg:flex-row gap-8 flex-wrap m-auto lg:my-14 w-11/12" 
       id="card-affiche-section1">
     </section>
-    <section class="hidden justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+    <section class="hidden justify-around flex-col lg:flex-row gap-8 flex-wrap m-auto lg:my-14 w-11/12"
       id="card-affiche-section2">
     </section>
-    <section class="hidden justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+    <section class="hidden justify-around flex-col lg:flex-row gap-8 flex-wrap m-auto lg:my-14 w-11/12/12"
       id="card-affiche-section3">
     </section>
-    <section class="hidden justify-around flex-col lg:flex-row gap-12 lg:gap-0 flex-wrap m-auto mb-14 overflow-auto"
+    <section class="hidden justify-around flex-col lg:flex-row gap-8 flex-wrap m-auto lg:my-14 w-11/12"
       id="card-affiche-section4">
     </section>
 
@@ -161,7 +162,7 @@ bg-base-200 : bg-[#f2f2f2] dark:bg-[#191e24] -->
       </div> -->
   </div>
 
-  <div class="flex justify-center">
+  <div class="flex justify-center mt-14">
     <div class="join">
       <button class="join-item btn btn-active" id="buttoncardaffiche1">1</button>
       <button class="join-item btn" id="buttoncardaffiche2">2</button>
@@ -276,17 +277,16 @@ bg-base-200 : bg-[#f2f2f2] dark:bg-[#191e24] -->
 
       <div class="lg:flex lg:items-end lg:justify-between">
         <div>
-          <div class="flex justify-center lg:justify-between">
+          <div class="flex justify-evenly">
             <p class="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">choose.</p>
-            
+
             <div class="flex flex-col self-center">
               <p class="text-sm self-center mb-2">dark</p>
-            <input
-            type="checkbox"
-            value="synthwave"
-            class="toggle theme-controller col-span-2 col-start-1 row-start-1 border-slate-400 bg-slate-100" id="darkmodetoggle" />
-            <p class="text-sm self-center mt-2">light</p>
-          </div>
+              <input type="checkbox" value="synthwave"
+                class="toggle theme-controller col-span-2 col-start-1 row-start-1 border-slate-400 bg-slate-100"
+                id="darkmodetoggle" />
+              <p class="text-sm self-center mt-2">light</p>
+            </div>
 
 
           </div>
