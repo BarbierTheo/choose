@@ -113,10 +113,10 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
             class="hover:shadow-sm flex rounded-lg self-center cursor-pointer lg:w-[17rem] duration-300 ease-in-out lg:h-[26rem]"></a>
             <div class="flex flex-row-reverse justify-center lg:justify-between">
                <label for="my_modal_${i}" class=" mt-2 self-start cursor-pointer">
-                   <i class='bx bxs-info-circle text-white text-2xl'></i>
+                   <i class='bx bxs-info-circle text-slate-950 dark:text-white text-2xl'></i>
                </label>
                <div class="flex flex-col w-48 mt-2">
-                  <h3 class="text-lg text-white font-bold">${item.title}</h3>
+                  <h3 class="text-lg text-slate-950 dark:text-white font-bold">${item.title}</h3>
                </div>
             </div>
       </div>
@@ -126,13 +126,13 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
             <div class="modal-box w-11/12 max-w-3xl bg-base-100 flex flex-col shadow-2xl">
               <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
               <div class="flex justify-between">
-                <h3 class="text-3xl font-bold text-slate-50">${item.title}</h3>
+                <h3 class="text-3xl font-bold text-slate-950 dark:text-white">${item.title}</h3>
                 <div class="flex flex-col text-right">
-                  <p class="text-gray-100 font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-                  <p class="text-gray-200 font-light">${moment(item.release_date).format('LL')}</p>
+                  <p class="text-slate-950 dark:text-white font-medium">${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
+                  <p class="text-slate-800 dark:text-white font-light">${moment(item.release_date).format('LL')}</p>
                 </div>
               </div>
-              <p class="text-slate-100">${item.overview}</p>
+              <p class="text-slate-950 dark:text-white">${item.overview}</p>
             </div>
             <label class="modal-backdrop" for="my_modal_${i}">Close</label>
           </div>
@@ -355,11 +355,11 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1&region=
       </img></a>
       <div class="flex flex-row-reverse justify-between">
         <label for="my_modal_${a}" class="self-center cursor-pointer">
-          <i class='bx bxs-info-circle text-white text-2xl'></i>
+          <i class='bx bxs-info-circle text-slate-950 dark:text-white text-2xl'></i>
         </label>
         <div class="flex flex-col w-48">
-          <h3 class="text-lg text-white font-bold">${item.title}</h3>
-          <p class="text-slate-300">${moment(item.release_date).format('L')}</p>
+          <h3 class="text-lg text-slate-950 dark:text-white font-bold">${item.title}</h3>
+          <p class="text-slate-800 dark:text-white">${moment(item.release_date).format('L')}</p>
         </div>
       </div>
     </div>
@@ -370,13 +370,13 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1&region=
       <div class="modal-box w-11/12 max-w-3xl bg-base-100 flex flex-col">
         <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" class="object-scale rounded mb-4" alt="">
         <div class="flex justify-between">
-          <h3 class="text-3xl font-bold text-gray-100">${item.title}</h3>
+          <h3 class="text-3xl font-bold text-slate-950 dark:text-white">${item.title}</h3>
           <div class="flex flex-col text-right">
-            <p class="text-gray-100 font-medium"> ${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
-            <p class="text-slate-300 font-light">${moment(item.release_date).format('LL')}</p>
+            <p class="text-slate-950 dark:text-white font-medium"> ${item.vote_average / 2}  <i class='bx bxs-star'></i></p>
+            <p class="text-slate-800 dark:text-white font-light">${moment(item.release_date).format('LL')}</p>
           </div>
         </div>
-        <p class="text-gray-100">${item.overview}</p>
+        <p class="text-slate-950 dark:text-white">${item.overview}</p>
       </div>
       <label class="modal-backdrop" for="my_modal_${a}">Fermer</label>
     </div>

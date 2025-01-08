@@ -79,19 +79,19 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
         document.getElementById('synopsis').innerText = details.overview
 
         if (details.vote_average <= 2.5) {
-            iconradial = "<i class='bx bx-run text-red-200 text-3xl'></i>"
+            iconradial = "<i class='bx bx-run text-gray-800 dark:text-gray text-3xl'></i>"
             colorradial = "text-red-500"
         } else if (details.vote_average <= 5) {
-            iconradial = "<i class='bx bx-body text-yellow-200 text-3xl'></i>"
+            iconradial = "<i class='bx bx-body text-gray-800 dark:text-gray text-3xl'></i>"
             colorradial = "text-yellow-400"
         } else if (details.vote_average <= 7.5) {
-            iconradial = "<i class='bx bxs-tv text-gray-100 text-3xl'></i>"
+            iconradial = "<i class='bx bxs-tv text-gray-800 dark:text-gray-100 text-3xl'></i>"
             colorradial = "text-green-300"
         } else if (details.vote_average < 9) {
-            iconradial = "<i class='bx bx-check text-green-200 text-3xl'></i>"
+            iconradial = "<i class='bx bx-check text-gray-800 dark:text-gray text-3xl'></i>"
             colorradial = "text-green-500"
         } else {
-            iconradial = "<i class='bx bxs-star text-yellow-200 text-3xl'></i>"
+            iconradial = "<i class='bx bxs-star text-gray-800 dark:text-gray text-3xl'></i>"
             colorradial = "text-gray-100"
         }
 
