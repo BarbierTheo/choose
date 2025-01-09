@@ -3,10 +3,10 @@ moment.locale('fr')
 
 let darkCount = 1
 
-function darkMode () {
+function darkMode() {
   darkCount++
   console.log(darkCount)
-  if (darkCount%2 == 0) {
+  if (darkCount % 2 == 0) {
     document.getElementById('darkmodehtml').classList.remove('dark')
   }
   else {
@@ -106,19 +106,19 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
       }
 
 
-    //   <div class="flex flex-col gap-1">
-    //   <a href="./movie.html?idMovie=${item.id}"><img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
-    //   </img></a>
-    //   <div class="flex flex-row-reverse justify-between">
-    //     <label for="my_modal_${a}" class="self-center cursor-pointer">
-    //       <i class='bx bxs-info-circle text-slate-950 dark:text-white text-2xl'></i>
-    //     </label>
-    //     <div class="flex flex-col w-48">
-    //       <h3 class="text-lg text-slate-950 dark:text-white font-bold">${item.title}</h3>
-    //       <p class="text-slate-800 dark:text-white">${moment(item.release_date).format('L')}</p>
-    //     </div>
-    //   </div>
-    // </div>
+      //   <div class="flex flex-col gap-1">
+      //   <a href="./movie.html?idMovie=${item.id}"><img class="w-64 object-cover rounded" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="">
+      //   </img></a>
+      //   <div class="flex flex-row-reverse justify-between">
+      //     <label for="my_modal_${a}" class="self-center cursor-pointer">
+      //       <i class='bx bxs-info-circle text-slate-950 dark:text-white text-2xl'></i>
+      //     </label>
+      //     <div class="flex flex-col w-48">
+      //       <h3 class="text-lg text-slate-950 dark:text-white font-bold">${item.title}</h3>
+      //       <p class="text-slate-800 dark:text-white">${moment(item.release_date).format('L')}</p>
+      //     </div>
+      //   </div>
+      // </div>
 
       document.getElementById(`card-affiche-section${sortiepage}`).innerHTML += `
           <div class="flex flex-col gap-2 self-center lg:self-start">
@@ -154,9 +154,9 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
 
     // PAGINATION STACK - A NE PAS MOVE CAR DOIT CHARGER LE JS
 
-    const stack1 = document.getElementById('stack0')
-    const stack2 = document.getElementById('stack1')
-    const stack3 = document.getElementById('stack2')
+    const stack1 = document.getElementById('stack1')
+    const stack2 = document.getElementById('stack2')
+    const stack3 = document.getElementById('stack3')
 
     const stackhero = document.getElementById('stackhero')
 
@@ -173,9 +173,11 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
       btnstack2.classList.remove('text-orange-500')
       btnstack3.classList.remove('text-orange-500')
 
-      stackhero.appendChild(stack1)
-      stackhero.appendChild(stack2)
-      stackhero.appendChild(stack3)
+      // stackhero.appendChild(stack1)
+      // stackhero.appendChild(stack2)
+      // stackhero.appendChild(stack3)
+
+      stackhero.insertBefore(stack1, stackhero.firstElementChild)
     }
     togglestack1.addEventListener("click", showstack1)
 
@@ -187,9 +189,11 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
       btnstack2.classList.add('text-orange-500')
       btnstack3.classList.remove('text-orange-500')
 
-      stackhero.appendChild(stack2)
-      stackhero.appendChild(stack1)
-      stackhero.appendChild(stack3)
+      // stackhero.appendChild(stack2)
+      // stackhero.appendChild(stack1)
+      // stackhero.appendChild(stack3)
+
+      stackhero.insertBefore(stack2, stackhero.firstElementChild)
     }
     togglestack2.addEventListener("click", showstack2)
 
@@ -201,9 +205,11 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1&regi
       btnstack2.classList.remove('text-orange-500')
       btnstack3.classList.add('text-orange-500')
 
-      stackhero.appendChild(stack3)
-      stackhero.appendChild(stack2)
-      stackhero.appendChild(stack1)
+      // stackhero.appendChild(stack3)
+      // stackhero.appendChild(stack2)
+      // stackhero.appendChild(stack1)
+
+      stackhero.insertBefore(stack3, stackhero.firstElementChild)
     }
     togglestack3.addEventListener("click", showstack3)
   });
@@ -314,30 +320,30 @@ toggleaffiche4.addEventListener("click", showaffiche4)
 
 
 // BUTTON WEEK PROCHAINES SORTIES
- 
+
 const toggleweek1 = document.getElementById("thisweek_btn");
-function showweek1(){
-document.getElementById("thisweek_btn").classList.add("btn-active")
-document.getElementById("nextweek_btn").classList.remove("btn-active")
-document.getElementById("allweek_btn").classList.remove("btn-active")
+function showweek1() {
+  document.getElementById("thisweek_btn").classList.add("btn-active")
+  document.getElementById("nextweek_btn").classList.remove("btn-active")
+  document.getElementById("allweek_btn").classList.remove("btn-active")
 
 }
 toggleweek1.addEventListener("click", showweek1)
 
 const toggleweek2 = document.getElementById("nextweek_btn");
-function showweek2(){
-document.getElementById("thisweek_btn").classList.remove("btn-active")
-document.getElementById("nextweek_btn").classList.add("btn-active")
-document.getElementById("allweek_btn").classList.remove("btn-active")
+function showweek2() {
+  document.getElementById("thisweek_btn").classList.remove("btn-active")
+  document.getElementById("nextweek_btn").classList.add("btn-active")
+  document.getElementById("allweek_btn").classList.remove("btn-active")
 
 }
 toggleweek2.addEventListener("click", showweek2)
 
 const toggleweek3 = document.getElementById("allweek_btn");
-function showweek3(){
-document.getElementById("thisweek_btn").classList.remove("btn-active")
-document.getElementById("nextweek_btn").classList.remove("btn-active")
-document.getElementById("allweek_btn").classList.add("btn-active")
+function showweek3() {
+  document.getElementById("thisweek_btn").classList.remove("btn-active")
+  document.getElementById("nextweek_btn").classList.remove("btn-active")
+  document.getElementById("allweek_btn").classList.add("btn-active")
 
 }
 toggleweek3.addEventListener("click", showweek3)
@@ -394,7 +400,7 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1&region=
       <label class="modal-backdrop" for="my_modal_${a}">Fermer</label>
     </div>
         `
-      }
+    }
 
     // PAGINATION BTN 1 SORTIES
 
@@ -435,5 +441,5 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1&region=
 
 
 
-  
+
 
