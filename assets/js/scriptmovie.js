@@ -16,23 +16,22 @@ function nFormatter(num, digits) {
 }
 
 if (localStorage.theme === "dark" || (!('theme' in localStorage)
-    &&window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.getElementById('darkmodehtml').classList.add('dark')
-    } else {
-      document.getElementById('darkmodehtml').classList.remove('dark')
-    }
-    
+    && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.getElementById('darkmodehtml').classList.add('dark')
+} else {
+    document.getElementById('darkmodehtml').classList.remove('dark')
+}
+
 let darkCount = 1
 
-function darkMode () {
-  darkCount++
-  console.log(darkCount)
-  if (darkCount%2 == 0) {
-    document.getElementById('darkmodehtml').classList.remove('dark')
-  }
-  else {
-    document.getElementById('darkmodehtml').classList.add('dark')
-  }
+function darkMode() {
+    darkCount++
+    if (darkCount % 2 == 0) {
+        document.getElementById('darkmodehtml').classList.remove('dark')
+    }
+    else {
+        document.getElementById('darkmodehtml').classList.add('dark')
+    }
 }
 document.getElementById('darkmodetoggle').addEventListener("click", darkMode)
 
@@ -72,6 +71,11 @@ const options = {
     }
 };
 
+function FlextoHidden(element) {
+    element.classList.remove('flex')
+    element.classList.add('hidden')
+}
+
 // Fetch des details du films
 
 fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
@@ -82,18 +86,28 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
 
         document.getElementById('titlepage').innerText = `Choose - ${details.title}`
 
-        document.getElementById('imgmovie').innerHTML += `<img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class=" w-[60vh] lg:skew-y-1 max-w-[90vw] self-center min-[1100px]:self-start">`
+        if (details.poster_path == undefined) {
+            document.getElementById('imgmovie').innerHTML += `<div class="skeleton w-[60vh] lg:skew-y-1 max-w-[90vw] self-center min-[1100px]:self-start"></div>`
+        } else {
+            document.getElementById('imgmovie').innerHTML += `<img src="https://image.tmdb.org/t/p/original/${details.poster_path}" alt="poster_${details.title}" class=" w-[60vh] lg:skew-y-1 max-w-[90vw] self-center min-[1100px]:self-start">`
+        }
+
+
+
+        details.vote_average !== 0 ? document.getElementById('vote').innerText = Math.round(details.vote_average) / 2 : FlextoHidden(document.getElementById('hiddenvote'));
 
         document.getElementById('movietitle').innerText = details.title;
-        document.getElementById('year').innerText = "(" + moment(details.release_date).format('YYYY') + ")";
+
+        details.release_date !== "" ? document.getElementById('year').innerText = "(" + moment(details.release_date).format('YYYY') + ")" : null;
 
         document.getElementById('release').innerText = moment(details.release_date).format('LL');
         const genre = details.genres.map(genre => genre.name).join(", ")
         document.getElementById('style').innerText = genre;
         document.getElementById('runtime').innerText = `${movieruntime.hours()} h ${movieruntime.minutes()} m`;
 
-        document.getElementById('vote').innerText = Math.round(details.vote_average) / 2;
         document.getElementById('votecount').innerText = (details.vote_count) + " avis";
+
+        details.budget !== 0 ? document.getElementById('budget').innerText = nFormatter(details.budget) + " $" : FlextoHidden(document.getElementById('hiddenbudget'))
         document.getElementById('budget').innerText = nFormatter(details.budget) + " $";
 
         document.getElementById('tagline').innerText = details.tagline
@@ -118,8 +132,7 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
 
         let valueradial = details.vote_average * 10
 
-
-        document.getElementById('popradial').innerHTML += `<div class="radial-progress self-center ${colorradial} my-3" style="--value:${valueradial};" role="progressbar">${iconradial}</div>`
+        details.vote_average !== 0 ? document.getElementById('popradial').innerHTML += `<div class="radial-progress self-center ${colorradial} my-3" style="--value:${valueradial};" role="progressbar">${iconradial}</div>` : null
 
 
     })
@@ -165,7 +178,6 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, 
 
         // Casting
 
-        console.log(credits.cast.length)
         if (credits.cast.length != 0) {
             let a = 0
             for (item of credits.cast) {
@@ -176,11 +188,9 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, 
                     }
                     else {
                         incr = 2
-                        console.log(5)
                     }
                 }
 
-                console.log(credits.cast.item)
                 if (a <= 8) {
 
                     if (item.profile_path == null) {
@@ -196,7 +206,7 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, 
                         document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
                 <div class="avatar self-center">
                      <div class="w-36 rounded-xl">
-                            <img src="${item.profile_path == null ? console.log('unkwn') : "https://image.tmdb.org/t/p/original/" + item.profile_path}" />
+                            <img src="${item.profile_path !== null ? "https://image.tmdb.org/t/p/original/" + item.profile_path : null}" />
                      </div>
                 </div>
             <p class="font-bold mt-1 w-36 leading-1">${item.name}</p>
@@ -261,13 +271,20 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, 
         similar.results.forEach(film => {
             count++
             if (count <= 6) {
-
-                document.getElementById('showsimilar').innerHTML += `
+                if (film.poster_path !== null) {
+                    document.getElementById('showsimilar').innerHTML += `
             <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
             <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" alt="" class="w-[12rem] h-[18rem]">
             <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
-        </div></a>`
+            </div></a>`
+                } else {
+                    document.getElementById('showsimilar').innerHTML += `
+                    <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
+                    <div class="skeleton w-[12rem] h-[18rem] rounded-lg"></div>
+                    <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
+                    </div></a>`
+                }
+
             } else { return; }
-            console.log(58)
         })
     })

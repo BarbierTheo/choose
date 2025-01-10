@@ -69,16 +69,18 @@
                         <input type="text" class="grow border-none" placeholder="ex: Le Parrain 2" name="nameMovie" />
                     </label>
 
-                    <select class="select lg:w-2/12">
+                    <select class="select lg:w-2/12" id="genrefilm">
                         <option disabled selected class="text-slate-300">Choisissez un genre</option>
-                        <option class="text-slate-950 dark:text-white">Science-fiction</option>
-                        <option class="text-slate-950 dark:text-white">Drame</option>
-                        <option class="text-slate-950 dark:text-white">Romance</option>
-                        <option class="text-slate-950 dark:text-white">Action</option>
-                        <option class="text-slate-950 dark:text-white">Horreur</option>
+                        <option class="text-slate-950 dark:text-white" data-genre_ids="878">Science-fiction</option>
+                        <option class="text-slate-950 dark:text-white" data-genre_ids="18">Drame</option>
+                        <option class="text-slate-950 dark:text-white" data-genre_ids="10749">Romance</option>
+                        <option class="text-slate-950 dark:text-white" data-genre_ids="28">Action</option>
+                        <option class="text-slate-950 dark:text-white" data-genre_ids="27">Horreur</option>
+                        <option class="text-slate-950 dark:text-white" data-genre_ids="99">Documentaire</option>
+                        <option class="text-slate-950 dark:text-white" data-genre_ids="35">Comédie</option>
                     </select>
 
-                    <button class="btn btn-neutral" type="submit"><i class='bx bx-search text-lg'></i></button>
+                    <button class="btn btn-neutral" type="submit" id="searchtoggle"><i class='bx bx-search text-lg'></i></button>
 
                 </div>
 

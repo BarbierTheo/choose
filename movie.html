@@ -57,7 +57,9 @@
 
     <section class="pt-28 pb-8">
         <div class="flex flex-col gap-8  justify-center lg:justify-between lg:mx-24 min-[1100px]:flex-row">
-            <div class="self-center min-[1100px]:self-start" id="imgmovie"></div>
+            <div class="self-center min-[1100px]:self-start" id="imgmovie">
+                <div class="skeleton w-[60vh] lg:skew-y-1 max-w-[90vw] self-center min-[1100px]:self-start"></div>
+            </div>
 
 
             <div class="flex flex-col gap-2 container self-start px-4 lg:mx-0 text-slate-950 dark:text-white">
@@ -84,7 +86,7 @@
                             </div>
                         </div> -->
 
-                        <div class="flex bg-slate-800  rounded-xl px-8 py-3 gap-4 self-center shadow-md text-white">
+                        <div class="flex bg-slate-800  rounded-xl px-8 py-3 gap-4 self-center shadow-md text-white" id="hiddenbudget">
                             <i class='bx bxs-bank self-center text-3xl'></i>
                             <div class="flex gap-1 self-center">
                                 <p class="font-semibold">Budget :</p>
@@ -92,7 +94,7 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col self-center ml-8">
+                        <div class="flex flex-col self-center ml-8" id="hiddenvote">
                             <div class="flex px-3 gap-2 justify-center lg:justify-start">
                                 <div class="flex gap-1 self-center text-xl font-bold align-middle">
                                     <p id="vote"></p>
@@ -130,7 +132,7 @@
                     <p class="text-3xl font-semibold text-left m-0">Casting</p>
                     <div class="divider m-1"></div>
                     <div class="flex gap-4 lg:flex-row lg:flex-nowrap justify-center flex-wrap text-white">
-                        <div class="flex p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap xl:flex-nowrap"
+                        <div class="flex p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap"
                             id="casting1">
                             <!-- <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center">
                                 <div class="avatar">
@@ -143,7 +145,7 @@
                                 <p class="italic leading-1">Neo</p>
                             </div> -->
                         </div>
-                        <div class="hidden p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap xl:flex-nowrap"
+                        <div class="hidden p-0 gap-4 lg:flex-row justify-center lg:justify-start flex-wrap"
                             id="casting2"></div>
                         <button
                             class="self-center text-center bg-transparent rounded-full hover:text-orange-500 ease-in duration-100"
@@ -201,7 +203,7 @@
 
 
                     </div>
-                    < <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-slate-500 lg:text-left">
+                     <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-slate-500 lg:text-left">
                         Explorez une sélection de films sans qu’aucun algorithme ne
                         dicte vos choix. Ici, c’est votre intuition et vos envies qui décident, sans influence
                         extérieure

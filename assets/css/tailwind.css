@@ -4674,6 +4674,10 @@ details.collapse summary::-webkit-details-marker {
   width: 100vw;
 }
 
+.w-\[10vh\] {
+  width: 10vh;
+}
+
 .min-w-\[20rem\] {
   min-width: 20rem;
 }
@@ -6005,6 +6009,12 @@ details.collapse summary::-webkit-details-marker {
 @media (min-width: 1320px) {
   .min-\[1320px\]\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:flex-nowrap {
+    flex-wrap: nowrap;
   }
 }
 
