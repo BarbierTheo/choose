@@ -114,20 +114,20 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
         document.getElementById('synopsis').innerText = details.overview
 
         if (details.vote_average <= 2.5) {
-            iconradial = "<i class='bx bx-run text-gray-800 dark:text-gray text-3xl'></i>"
-            colorradial = "text-red-500"
+            iconradial = "<i class='bx bx-run text-gray-600 dark:text-gray-100 text-3xl'></i>"
+            colorradial = "text-red-700"
         } else if (details.vote_average <= 5) {
-            iconradial = "<i class='bx bx-body text-gray-800 dark:text-gray text-3xl'></i>"
-            colorradial = "text-yellow-400"
+            iconradial = "<i class='bx bx-body text-gray-600 dark:text-gray-100 text-3xl'></i>"
+            colorradial = "text-red-300"
         } else if (details.vote_average <= 7.5) {
-            iconradial = "<i class='bx bxs-tv text-gray-800 dark:text-gray-100 text-3xl'></i>"
+            iconradial = "<i class='bx bxs-tv text-gray-600 dark:text-gray-100 text-3xl'></i>"
             colorradial = "text-green-300"
         } else if (details.vote_average < 9) {
-            iconradial = "<i class='bx bx-check text-gray-800 dark:text-gray text-3xl'></i>"
+            iconradial = "<i class='bx bx-check text-gray-600 dark:text-gray-100 text-3xl'></i>"
             colorradial = "text-green-500"
         } else {
-            iconradial = "<i class='bx bxs-star text-gray-800 dark:text-gray text-3xl'></i>"
-            colorradial = "text-gray-100"
+            iconradial = "<i class='bx bxs-star text-gray-600 dark:text-gray-100 text-3xl'></i>"
+            colorradial = "text-yellow-400"
         }
 
         let valueradial = details.vote_average * 10
@@ -195,29 +195,33 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}/credits?language=fr-FR`, 
 
                     if (item.profile_path == null) {
                         document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
-                    <div class="avatar self-center">
-                         <div class="w-36 rounded-xl skeleton">
-                         </div>
-                    </div>
-                      <p class="font-bold mt-1 w-36">${item.name}</p>
-                      <p class="italic w-36">${item.character}</p>
-                  </div>`
+                                 <div class="avatar self-center">
+                                    <div class="w-36 rounded-xl skeleton">
+                                     </div>
+                              </div>
+                              <p class="font-bold mt-1 w-36">${item.name}</p>
+                              <p class="italic w-36">${item.character}</p>
+                              </div>`
                     } else {
                         document.getElementById(`casting${incr}`).innerHTML += ` <div class="flex flex-col p-3 bg-slate-900 rounded-2xl self-center lg:self-start">
-                <div class="avatar self-center">
-                     <div class="w-36 rounded-xl">
-                            <img src="${item.profile_path !== null ? "https://image.tmdb.org/t/p/original/" + item.profile_path : null}" />
-                     </div>
-                </div>
-            <p class="font-bold mt-1 w-36 leading-1">${item.name}</p>
-            <p class="italic w-36 leading-1">${item.character}</p>
-        </div>`
+                               <div class="avatar self-center">
+                                      <div class="w-36 rounded-xl">
+                                       <img src="${item.profile_path !== null ? "https://image.tmdb.org/t/p/original/" + item.profile_path : null}" />
+                                     </div>
+                                </div>
+                                <p class="font-bold mt-1 w-36 leading-1">${item.name}</p>
+                                <p class="italic w-36 leading-1">${item.character}</p>
+                                </div>`
                     }
                 }
-
             }
+
+            a <= 4 ? document.getElementById('buttoncard2').classList.add('hidden') : null
+
         } else {
+
             document.getElementById("containercasting").classList.add('hidden')
+
         }
 
 
