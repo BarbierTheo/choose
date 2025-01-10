@@ -1,3 +1,11 @@
+if (localStorage.theme === "dark" || (!('theme' in localStorage)
+  &&window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.getElementById('darkmodehtml').classList.add('dark')
+  } else {
+    document.getElementById('darkmodehtml').classList.remove('dark')
+  }
+
+
 let darkCount = 1
 
 function darkMode () {
