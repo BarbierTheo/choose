@@ -81,6 +81,7 @@ function FlextoHidden(element) {
 fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
     .then((reponse) => reponse.json())
     .then((details) => {
+
         const movieruntime = moment.duration(details.runtime, 'minutes');
 
 
@@ -100,9 +101,11 @@ fetch(`https://api.themoviedb.org/3/movie/${movieName}?language=fr-FR`, options)
 
         details.release_date !== "" ? document.getElementById('year').innerText = "(" + moment(details.release_date).format('YYYY') + ")" : null;
 
-        document.getElementById('release').innerText = moment(details.release_date).format('LL');
+        details.release_date!=="" ?document.getElementById('release').innerText = moment(details.release_date).format('LL') : null
+        
         const genre = details.genres.map(genre => genre.name).join(", ")
-        document.getElementById('style').innerText = genre;
+        details.genres.length!==0 ? document.getElementById('style').innerText = genre : null
+
         document.getElementById('runtime').innerText = `${movieruntime.hours()} h ${movieruntime.minutes()} m`;
 
         document.getElementById('votecount').innerText = (details.vote_count) + " avis";
@@ -271,24 +274,29 @@ let count = 0
 fetch(`https://api.themoviedb.org/3/movie/${movieName}/similar?language=fr-FR`, options)
     .then(res => res.json())
     .then(similar => {
-
-        similar.results.forEach(film => {
-            count++
-            if (count <= 6) {
-                if (film.poster_path !== null) {
-                    document.getElementById('showsimilar').innerHTML += `
+        console.log(similar.results.length)
+        if (similar.results.length !== 0) {
+            similar.results.forEach(film => {
+                count++
+                if (count <= 6) {
+                    if (film.poster_path !== null) {
+                        document.getElementById('showsimilar').innerHTML += `
             <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
             <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" alt="" class="w-[12rem] h-[18rem]">
             <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
             </div></a>`
-                } else {
-                    document.getElementById('showsimilar').innerHTML += `
+                    } else {
+                        document.getElementById('showsimilar').innerHTML += `
                     <a href="./movie.html?idMovie=${film.id}"><div class="flex flex-col p-4 mb-4 self-center lg:self-start">
                     <div class="skeleton w-[12rem] h-[18rem] rounded-lg"></div>
                     <p class="text-slate-50 font-bold w-32 mt-2">${film.title}</p>
                     </div></a>`
-                }
+                    }
 
-            } else { return; }
-        })
+                } else { return; }
+
+            })
+        } else {
+            FlextoHidden(document.getElementById('similarmovie'))
+        }
     })
